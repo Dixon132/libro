@@ -1,0 +1,54 @@
+---
+title: "Contenedores y despliegue: Docker, servidores, dominios, HTTPS y nube"
+estado: pendiente   # pendiente | borrador | revision | listo
+---
+
+::: {.callout-note collapse="true"}
+## Ficha del capítulo
+- **Objetivo de aprendizaje:** _(qué podrá hacer quien lea al terminar)_
+- **Prerrequisitos:** _(capítulos previos)_
+- **Proyecto guía:** _(qué pieza del sistema se construye o revisa aquí)_
+:::
+
+## Orden {#sec-c17-orden}
+
+<!-- Presenta el problema real y la solución de referencia: el sistema en equilibrio. -->
+_Por escribir._ Presenta el problema real y la solución de referencia: el sistema en equilibrio.
+
+## Entropía {#sec-c17-entropia}
+
+<!-- ¿Qué lo degrada con el tiempo, el equipo y la escala? ¿Por qué la solución obvia no alcanza? -->
+_Por escribir._ ¿Qué lo degrada con el tiempo, el equipo y la escala? ¿Por qué la solución obvia no alcanza?
+
+## Análisis {#sec-c17-analisis}
+
+_Por escribir._ Contenido técnico a fondo: conceptos, alternativas, patrones y ejemplos de código.
+
+## Contención {#sec-c17-contencion}
+
+_Por escribir._ Prácticas, pruebas y un reto práctico que frenen el desorden, con evidencia de que funcionan.
+
+::: {.callout-important}
+## Reto
+_Describe aquí el reto práctico del capítulo._
+:::
+
+## Ojo de la IA {#sec-c17-ia}
+
+::: {.callout-tip icon="false"}
+## Ojo de la IA
+_Por escribir._ Ventana breve: cómo una IA leería, generaría o rompería este tema, y qué debe revisar una persona.
+:::
+
+## Custodia {#sec-c17-custodia}
+
+::: {.callout-warning icon="false"}
+## Custodia
+_Por escribir._ Reflexión ética y social: quién responde por lo construido y qué hay que proteger.
+:::
+
+## Para cerrar
+
+- **Ideas clave:** _(3 a 5 viñetas)_
+- **Preguntas de repaso:** _(3 preguntas)_
+- **Para profundizar:** _(fuentes con citas `[@clave]`)_

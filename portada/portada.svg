@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="800" height="1200">
+  <!-- Portada provisional brutalista/dadaísta. Reemplázala por tu propio collage (PNG/JPG) cuando lo tengas. -->
+  <rect width="800" height="1200" fill="#f2efe6"/>
+
+  <!-- bloques de color tipo afiche -->
+  <rect x="0" y="0" width="800" height="300" fill="#111"/>
+  <rect x="520" y="250" width="320" height="420" fill="#e10600" transform="rotate(8 680 460)"/>
+  <rect x="-40" y="760" width="460" height="120" fill="#ffd400" transform="rotate(-6 190 820)"/>
+  <circle cx="160" cy="560" r="120" fill="none" stroke="#0033ff" stroke-width="22"/>
+
+  <!-- rejilla de código como ruido -->
+  <g font-family="'Courier New', monospace" font-size="18" fill="#111" opacity=".55">
+    <text x="40" y="360">if (orden) { entropia++; }</text>
+    <text x="70" y="390">// TODO: arreglar después</text>
+    <text x="40" y="420">git commit -m "ahora sí"</text>
+    <text x="300" y="980">H = -Σ p(x) log p(x)</text>
+    <text x="330" y="1010">loss = cross_entropy(y, ŷ)</text>
+  </g>
+
+  <!-- título como recortes pegados -->
+  <g font-family="'Arial Black', Impact, sans-serif" font-weight="900">
+    <rect x="40" y="70" width="540" height="110" fill="#f2efe6" transform="rotate(-2 310 125)"/>
+    <text x="60" y="160" font-size="104" fill="#111" transform="rotate(-2 310 125)">CÓDIGO</text>
+    <rect x="150" y="185" width="620" height="110" fill="#ffd400" transform="rotate(2 460 240)"/>
+    <text x="170" y="275" font-size="96" fill="#111" transform="rotate(2 460 240)">ENTRÓPICO</text>
+  </g>
+
+  <!-- ojo -->
+  <g transform="translate(560 470) rotate(8)">
+    <ellipse cx="0" cy="0" rx="110" ry="58" fill="#f2efe6" stroke="#111" stroke-width="8"/>
+    <circle cx="0" cy="0" r="34" fill="#111"/>
+    <circle cx="10" cy="-10" r="9" fill="#f2efe6"/>
+  </g>
+
+  <!-- subtítulo mecanografiado -->
+  <g font-family="'Courier New', monospace" font-size="26" font-weight="700" fill="#111">
+    <text x="40" y="1080">LA EVOLUCIÓN DEL DESARROLLO DE SOFTWARE</text>
+    <text x="40" y="1115">FRENTE AL OJO DE LA IA</text>
+  </g>
+  <rect x="40" y="1135" width="720" height="8" fill="#111"/>
+  <text x="40" y="1175" font-family="'Arial Black', sans-serif" font-size="24" fill="#e10600">DIEGO TORREZ — BOLIVIA</text>
+</svg>

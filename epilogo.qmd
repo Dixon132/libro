@@ -1,0 +1,15 @@
+# Epílogo: El orden no se hereda, se trabaja {.unnumbered}
+
+::: {.callout-note collapse="true"}
+## Idea del epílogo (guía de escritura)
+Cerrar el **Ciclo Entrópico** del libro entero. Si empezamos en el *Orden* del puesto de Doña Rosa, terminamos en la *Custodia*: el desorden nunca desaparece, solo se contiene con trabajo diario, y ese trabajo hoy lo compartimos con una máquina que también mira, escribe y juzga el código.
+
+Recorrido sugerido:
+
+1. **Volver al mercado:** el puesto de Doña Rosa al final del libro, con Caserita ya completa.
+2. **Las tres entropías, una última vez:** la termodinámica (mantener cuesta), la de información (reducir la incertidumbre es el oficio) y la entropía cruzada (la IA predice, no entiende).
+3. **El último consejo del Inge.**
+4. **Una pregunta abierta** para quien lee y va a construir tecnología desde Bolivia.
+:::
+
+_Por escribir._

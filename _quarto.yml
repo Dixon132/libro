@@ -1,0 +1,101 @@
+project:
+  type: book
+  output-dir: _book
+
+lang: es
+
+book:
+  title: "Código Entrópico"
+  subtitle: "La evolución del desarrollo de software frente al ojo de la IA"
+  author: "Diego Torrez"   # TODO: confirmar autor(es)
+  date: today
+  date-format: "MMMM YYYY"
+  description: "Proyecto Semestral de Producción Intelectual — Dirección y Liderazgo Creativo (UNIFRANZ). Área: Desarrollo de Software."
+  search: true
+  cover-image: portada/portada.svg
+  cover-image-alt: "Portada collage: CÓDIGO ENTRÓPICO, un ojo y bloques de color"
+  downloads: [pdf, epub]
+  chapters:
+    - index.qmd
+    - ciclo-entropico.qmd
+    - part: partes/parte1.qmd
+      chapters:
+        - capitulos/01-pensar-antes-de-programar.qmd
+        - capitulos/02-el-primer-lenguaje.qmd
+        - capitulos/03-estructuras-de-datos.qmd
+        - capitulos/04-algoritmos.qmd
+        - capitulos/05-programacion-orientada-a-objetos.qmd
+        - capitulos/06-otros-paradigmas.qmd
+        - capitulos/07-codigo-limpio.qmd
+        - capitulos/08-patrones-de-diseno.qmd
+        - capitulos/09-bases-de-datos.qmd
+        - capitulos/10-arquitectura-de-software.qmd
+        - capitulos/11-estructura-de-proyectos.qmd
+        - capitulos/12-apis.qmd
+        - capitulos/13-frontend-moderno.qmd
+        - capitulos/14-git-y-trabajo-en-equipo.qmd
+        - capitulos/15-pruebas.qmd
+        - capitulos/16-seguridad-desde-el-diseno.qmd
+        - capitulos/17-contenedores-y-despliegue.qmd
+        - capitulos/18-ci-cd-y-devops.qmd
+        - capitulos/19-produccion.qmd
+        - capitulos/20-metodologias-y-clientes.qmd
+    - part: partes/parte2.qmd
+      chapters:
+        - capitulos/21-como-funciona-un-modelo-de-lenguaje.qmd
+        - capitulos/22-el-ecosistema-de-herramientas.qmd
+        - capitulos/23-comunicarse-con-la-maquina.qmd
+        - capitulos/24-proyecto-guia.qmd
+        - capitulos/25-leer-y-entender-codigo-que-no.qmd
+        - capitulos/26-pruebas-y-depuracion-asistidas-por-ia.qmd
+        - capitulos/27-refactorizar-sistemas-heredados-con-ia.qmd
+        - capitulos/28-cuando-no-usar-ia.qmd
+    - part: partes/parte3.qmd
+      chapters:
+        - capitulos/29-integrar-modelos-en-tus-sistemas.qmd
+        - capitulos/30-embeddings-y-busqueda-semantica.qmd
+        - capitulos/31-rag.qmd
+        - capitulos/32-tool-use.qmd
+        - capitulos/33-mcp-e-integraciones-con-servicios-externos.qmd
+        - capitulos/34-skills-y-flujos-de-trabajo-reutilizables.qmd
+        - capitulos/35-agentes-autonomos-y-sistemas-multiagente.qmd
+        - capitulos/36-evaluar-sistemas-con-ia.qmd
+        - capitulos/37-seguridad-en-ia.qmd
+        - capitulos/38-ia-local-y-autoalojada.qmd
+    - part: partes/parte4.qmd
+      chapters:
+        - capitulos/39-lo-que-siempre-estuvo-ahi.qmd
+        - capitulos/40-la-brecha-digital-en-bolivia-y.qmd
+        - capitulos/41-el-trabajo-del-futuro.qmd
+        - capitulos/42-soberania-de-datos-y-extractivismo-digital.qmd
+        - capitulos/43-la-ia-y-nuestras-lenguas.qmd
+        - capitulos/44-el-costo-ambiental-de-la-ia.qmd
+        - capitulos/45-etica-y-responsabilidad-del-desarrollador.qmd
+        - capitulos/46-regulacion.qmd
+        - capitulos/47-tecnologia-para-lo-nuestro.qmd
+    - epilogo.qmd
+    - referencias.qmd
+
+bibliography: references.bib
+crossref:
+  chapters: true
+
+format:
+  html:
+    theme: [cosmo, estilos/tema.scss]   # identidad brutalista: un solo tema claro
+    css: estilos/estilos.css
+    toc: true
+    toc-title: "En este capítulo"
+    number-sections: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+  typst:
+    keep-typ: true
+    toc: true
+    number-sections: true
+  epub:
+    toc: true
+
+editor:
+  render-on-save: true

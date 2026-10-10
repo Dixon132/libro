@@ -1,0 +1,67 @@
+# El Ciclo Entrópico {.unnumbered}
+
+Cada capítulo recorre un ciclo: se parte de un sistema en orden, se lo perturba, se lo analiza, se lo contiene, se lo mira con IA y se asume responsabilidad por él.
+
+```{mermaid}
+%%| fig-cap: "El Ciclo Entrópico"
+flowchart LR
+  A[1. Orden] --> B[2. Entropía]
+  B --> C[3. Análisis]
+  C --> D[4. Contención]
+  D --> E[5. Ojo de la IA]
+  E --> F[6. Custodia]
+  F -.-> A
+```
+
+| # | Etapa | Qué hace en el capítulo |
+|---|---|---|
+| 1 | **Orden** | Se presenta el problema real y la solución de referencia: el sistema en equilibrio. |
+| 2 | **Entropía** | Se pregunta qué lo degrada con el tiempo, el equipo y la escala, y por qué la solución obvia no alcanza. |
+| 3 | **Análisis** | Se enseña el contenido técnico a fondo, comparando alternativas, patrones y enfoques. |
+| 4 | **Contención** | Prácticas, pruebas y retos que frenan el desorden, con evidencia de que funcionan. |
+| 5 | **Ojo de la IA** | Qué cambia al mirar el tema con IA: dónde ayuda, dónde se equivoca y qué debe revisar una persona. |
+| 6 | **Custodia** | Reflexión ética y social: quién responde por lo construido y qué hay que proteger. |
+
+## Cómo se adapta según la parte {.unnumbered}
+
+- **Parte I:** el *Ojo de la IA* es una ventana breve (cómo una IA leería, generaría o rompería este tema).
+- **Parte II:** el *Ojo de la IA* se vuelve el centro del capítulo y la *Custodia* incluye cuándo no delegar.
+- **Parte III:** el *Ojo de la IA* es el contenido técnico mismo; el *Análisis* mide costos, límites y riesgos.
+- **Parte IV:** el *Orden* y la *Entropía* son sociales (talento, datos, lenguas, territorio) y el *Ojo de la IA* pregunta qué ve el modelo y qué ignora.
+
+## Convenciones visuales {.unnumbered}
+
+::: {.callout-important}
+## Reto
+Ejercicio práctico de la etapa de Contención.
+:::
+
+::: {.callout-tip icon="false"}
+## Ojo de la IA
+Lo que cambia al mirar el tema con IA.
+:::
+
+::: {.callout-warning icon="false"}
+## Custodia
+Responsabilidad ética y social.
+:::
+
+### Recursos de collage {.unnumbered}
+
+El libro rompe su propia página a propósito, pero con medida.
+
+::: {.grito}
+El código se pudre.
+:::
+
+::: {.recorte}
+«Un sistema que cambia se vuelve más complejo, a menos que se trabaje para evitarlo.» Lehman, parafraseado.
+:::
+
+::: {.manifiesto}
+1. Ningún commit sin explicación.
+2. Ningún cambio generado sin leer.
+3. Ningún dato sin dueño.
+:::
+
+Texto con [palabras tachadas]{.tachado} y [palabras marcadas]{.marcador}.

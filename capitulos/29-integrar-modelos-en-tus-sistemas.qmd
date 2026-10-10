@@ -1,0 +1,54 @@
+---
+title: "Integrar modelos en tus sistemas: APIs, costos, límites y streaming"
+estado: pendiente   # pendiente | borrador | revision | listo
+---
+
+::: {.callout-note collapse="true"}
+## Ficha del capítulo
+- **Objetivo de aprendizaje:** _(qué podrá hacer quien lea al terminar)_
+- **Prerrequisitos:** _(capítulos previos)_
+- **Proyecto guía:** _(qué pieza del sistema se construye o revisa aquí)_
+:::
+
+## Orden {#sec-c29-orden}
+
+<!-- El sistema sin el componente de IA y la necesidad que justifica agregarlo. -->
+_Por escribir._ El sistema sin el componente de IA y la necesidad que justifica agregarlo.
+
+## Entropía {#sec-c29-entropia}
+
+<!-- Nuevas fuentes de incertidumbre: no determinismo, costos variables, dependencias de proveedores. -->
+_Por escribir._ Nuevas fuentes de incertidumbre: no determinismo, costos variables, dependencias de proveedores.
+
+## Análisis {#sec-c29-analisis}
+
+_Por escribir._ Costos, límites y riesgos medidos; arquitectura y alternativas.
+
+## Contención {#sec-c29-contencion}
+
+_Por escribir._ Evaluaciones, guardas, observabilidad y un reto de implementación.
+
+::: {.callout-important}
+## Reto
+_Describe aquí el reto práctico del capítulo._
+:::
+
+## Ojo de la IA {#sec-c29-ia}
+
+::: {.callout-tip icon="false"}
+## Ojo de la IA
+_Por escribir._ El contenido técnico mismo: implementación paso a paso con código.
+:::
+
+## Custodia {#sec-c29-custodia}
+
+::: {.callout-warning icon="false"}
+## Custodia
+_Por escribir._ Privacidad, seguridad, dependencia tecnológica y responsabilidad sobre decisiones automatizadas.
+:::
+
+## Para cerrar
+
+- **Ideas clave:** _(3 a 5 viñetas)_
+- **Preguntas de repaso:** _(3 preguntas)_
+- **Para profundizar:** _(fuentes con citas `[@clave]`)_

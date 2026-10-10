@@ -1,0 +1,166 @@
+/*-- scss:defaults --*/
+// ============================================================
+//  CÓDIGO ENTRÓPICO — tema brutalista / dadaísta
+//  Cambia aquí la paleta y las fuentes; todo el libro las hereda.
+// ============================================================
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@1,700&family=Space+Mono:wght@400;700&display=swap');
+
+// Paleta: papel de periódico, tinta, y tres colores de afiche
+$papel:    #f2efe6;
+$tinta:    #111111;
+$rojo:     #e10600;
+$amarillo: #ffd400;
+$azul:     #0033ff;
+
+$body-bg:    $papel;
+$body-color: $tinta;
+$primary:    $rojo;
+$link-color: $azul;
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+
+$font-family-sans-serif: "IBM Plex Sans", system-ui, sans-serif;
+$font-family-monospace:  "Space Mono", ui-monospace, monospace;
+$headings-font-family:   "Archivo Black", "IBM Plex Sans", sans-serif;
+$headings-font-weight:   400;
+
+$code-bg:    $tinta;
+$code-color: $amarillo;
+
+/*-- scss:rules --*/
+// ---------- Estructura cruda ----------
+body { font-size: 1.05rem; line-height: 1.6; }
+
+h1, h2, h3 { text-transform: uppercase; letter-spacing: -0.02em; }
+.quarto-title .title {
+  font-size: clamp(1.8rem, 4.2vw, 3.2rem);
+  line-height: 0.95;
+  border-bottom: 8px solid $tinta;
+  padding-bottom: .3em;
+}
+
+// Las seis secciones del ciclo: etiqueta numerada estilo cartel
+h2.anchored {
+  border-top: 4px solid $tinta;
+  padding-top: .4em;
+  margin-top: 2.5em;
+}
+
+a { text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { background: $amarillo; color: $tinta; }
+
+// Código: bloque negro, sin redondeos
+div.sourceCode, pre { border: 3px solid $tinta; box-shadow: 6px 6px 0 $rojo; }
+
+// Tablas: rejilla expuesta
+table { border: 3px solid $tinta !important; }
+th { background: $tinta; color: $papel; text-transform: uppercase; font-family: $font-family-monospace; }
+td, th { border: 1px solid $tinta !important; }
+
+// Callouts como etiquetas pegadas
+.callout {
+  border: 3px solid $tinta !important;
+  border-left-width: 12px !important;
+  box-shadow: 6px 6px 0 $tinta;
+  background: #fff;
+}
+.callout .callout-header { font-family: $font-family-monospace; text-transform: uppercase; }
+.callout-important { border-left-color: $rojo !important; }
+.callout-tip       { border-left-color: $azul !important; }
+.callout-warning   { border-left-color: $amarillo !important; }
+
+// Barra lateral: índice como listado mecanografiado
+.sidebar nav[role="doc-toc"], #quarto-sidebar { font-family: $font-family-monospace; font-size: .85rem; }
+.sidebar-title { font-family: $headings-font-family; text-transform: uppercase; }
+
+// ---------- Recursos dadaístas (usar con moderación) ----------
+
+// ::: {.grito}  — frase enorme que rompe la página
+.grito {
+  font-family: $headings-font-family;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  line-height: .95;
+  text-transform: uppercase;
+  color: $rojo;
+  margin: 1.5em 0;
+  transform: rotate(-2deg);
+  p { margin: 0; }
+}
+
+// ::: {.recorte} — recorte de periódico pegado con cinta
+.recorte {
+  position: relative;
+  background: #fff;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  padding: 1.2em 1.4em;
+  margin: 2em 5% 2em 0;
+  border: 1px solid $tinta;
+  box-shadow: 4px 4px 0 rgba(0,0,0,.25);
+  transform: rotate(1.2deg);
+  &::before {               // cinta adhesiva
+    content: "";
+    position: absolute; top: -12px; left: 40%;
+    width: 90px; height: 24px;
+    background: rgba($amarillo, .8);
+    transform: rotate(-4deg);
+  }
+  &:nth-of-type(even) { transform: rotate(-1.5deg); margin: 2em 0 2em 5%; }
+}
+
+// ::: {.manifiesto} — lista numerada como afiche
+.manifiesto {
+  background: $tinta;
+  color: $papel;
+  padding: 1.5em 2em;
+  font-family: $font-family-monospace;
+  text-transform: uppercase;
+  border-left: 16px solid $rojo;
+  ol, ul { margin: 0; }
+  li { margin: .4em 0; }
+  a { color: $amarillo; }
+}
+
+// [texto]{.tachado}  [texto]{.marcador}
+.tachado { text-decoration: line-through; text-decoration-color: $rojo; text-decoration-thickness: 3px; }
+.marcador { background: linear-gradient(transparent 55%, $amarillo 55%); padding: 0 .1em; }
+
+// ::: {.ruido} — texto desordenado a propósito
+.ruido {
+  font-family: $font-family-monospace;
+  white-space: pre-wrap;
+  letter-spacing: .15em;
+  opacity: .85;
+  p { margin: 0; }
+}
+
+// ::: {.pizarra} — la voz del Inge: pizarra de aula
+.pizarra {
+  background: #1f3b2d;
+  color: #f4f1e8;
+  font-family: $font-family-monospace;
+  padding: 1.4em 1.6em;
+  margin: 2em 0;
+  border: 10px solid #6b4a2b;            // marco de madera
+  box-shadow: 8px 8px 0 $tinta;
+  p:first-child strong { color: $amarillo; text-transform: uppercase; letter-spacing: .05em; }
+  strong { color: #fff; }
+  em { color: #b8e0c8; }
+  code { background: transparent; color: $amarillo; }
+  ul { margin-bottom: 0; }
+}
+
+// Portadas de parte: página-cartel
+.parte-cartel {
+  background: $tinta; color: $papel;
+  padding: 2em; margin: 1em 0 2em;
+  font-family: $headings-font-family;
+  font-size: clamp(1.5rem, 4vw, 2.6rem);
+  line-height: 1; text-transform: uppercase;
+  box-shadow: 10px 10px 0 $rojo;
+}
+
+// Imagen de portada en la barra lateral
+.sidebar .cover-image, img.quarto-cover-image { border: 4px solid $tinta; box-shadow: 8px 8px 0 $rojo; }

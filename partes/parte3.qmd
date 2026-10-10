@@ -1,0 +1,3 @@
+# Parte III: La señal — IA aplicada avanzada {.unnumbered}
+
+La IA deja de ser herramienta y se vuelve componente. El *Ojo de la IA* es el contenido técnico mismo, y el *Análisis* mide costos, límites y riesgos con números.

@@ -1,0 +1,67 @@
+---
+title: "Git y trabajo en equipo: ramas, pull requests y revisión de código"
+estado: borrador   # pendiente | borrador | revision | listo
+---
+
+::: {.callout-note collapse="true"}
+## Ficha del capítulo
+- **Objetivo de aprendizaje:** trabajar en equipo sobre un mismo repositorio sin perder cambios ni historia.
+- **Prerrequisitos:** capítulos 2 y 11.
+- **Proyecto guía:** _(qué pieza del sistema se construye o revisa aquí)_
+:::
+
+Este es el capítulo de ejemplo del Ciclo Entrópico. Sirve como modelo para el resto.
+
+## Orden {#sec-c14-orden}
+
+Un repositorio limpio con una sola persona trabajando: cada commit sigue al anterior, la historia es una línea recta y nadie pisa el trabajo de nadie.
+
+_Por desarrollar: qué es un repositorio, commits, historial, `git log`._
+
+## Entropía {#sec-c14-entropia}
+
+Llegan seis personas. Aparecen ramas divergentes, conflictos y commits sin explicación ("fix", "cambios", "ahora sí"). La historia deja de contar qué pasó y por qué.
+
+_Por desarrollar: por qué "todos en `main`" no escala._
+
+## Análisis {#sec-c14-analisis}
+
+Ramas, pull requests, merge frente a rebase y revisión de código.
+
+```bash
+git switch -c feature/login
+git add .
+git commit -m "feat(auth): agrega inicio de sesión con correo"
+git push -u origin feature/login
+```
+
+_Por desarrollar: comparación merge vs rebase (tabla), flujos de trabajo (GitHub Flow, trunk-based)._
+
+## Contención {#sec-c14-contencion}
+
+Convenciones de commits, ramas protegidas y revisión obligatoria antes de integrar.
+
+::: {.callout-important}
+## Reto
+Resolver conflictos reales: dos integrantes modifican la misma función en ramas distintas y deben integrarlas sin perder ningún cambio.
+:::
+
+## Ojo de la IA {#sec-c14-ia}
+
+::: {.callout-tip icon="false"}
+## Ojo de la IA
+La IA puede resumir diffs, redactar mensajes de commit y detectar errores en una revisión. El riesgo: **aprobar un cambio que nadie leyó**. Un resumen generado no reemplaza la lectura del diff.
+:::
+
+## Custodia {#sec-c14-custodia}
+
+::: {.callout-warning icon="false"}
+## Custodia
+¿Quién responde por el código generado que entra al repositorio? ¿Qué pasa con las licencias del código que la IA pudo haber reproducido?
+:::
+
+## Para cerrar
+
+- **Ideas clave:** _(3 a 5 viñetas)_
+- **Preguntas de repaso:** _(3 preguntas)_
+- **Para profundizar:** _(fuentes con citas `[@clave]`)_

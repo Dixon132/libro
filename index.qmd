@@ -1,0 +1,37 @@
+# Prefacio {.unnumbered}
+
+::: {.callout-note appearance="minimal"}
+**Proyecto Semestral de Producción Intelectual** — Dirección y Liderazgo Creativo (UNIFRANZ).
+Área: Desarrollo de Software.
+:::
+
+## Por qué la entropía {.unnumbered}
+
+Todo sistema que se deja solo tiende al desorden. El software no es la excepción: un código que funciona hoy se degrada con cada cambio, cada integrante nuevo en el equipo y cada prisa por entregar. Esa degradación tiene nombre propio en la ingeniería: complejidad creciente, deuda técnica, podredumbre del software. La idea es antigua; las leyes de evolución del software de Lehman ya describían que un sistema que cambia se vuelve más complejo si nadie trabaja para evitarlo [@lehman1980].
+
+Este libro usa la entropía en tres sentidos que se complementan:
+
+| Sentido de la entropía | Qué significa | Qué enseña el libro |
+|---|---|---|
+| **Termodinámica** | El orden no se mantiene solo; mantenerlo cuesta trabajo | Arquitectura, pruebas, revisión de código y CI/CD son trabajo contra el desorden |
+| **Información** [@shannon1948] | Medida de la incertidumbre de un mensaje | Requisitos ambiguos, prompts vagos y datos ruidosos: reducir la incertidumbre es el oficio |
+| **Entropía cruzada** | La función con la que se entrena un modelo de lenguaje para predecir el siguiente token | Cómo "piensa" y por qué se equivoca la IA con la que desarrollamos |
+
+: Los tres sentidos de la entropía en el libro {#tbl-sentidos}
+
+## El ojo de la IA {.unnumbered}
+
+La inteligencia artificial entra a este cuadro con doble filo. Puede producir código a una velocidad que multiplica el desorden potencial (código que nadie leyó, dependencias que nadie eligió), y a la vez es una herramienta para mirar, ordenar y verificar el código con una paciencia que un equipo humano rara vez tiene. Por eso el subtítulo habla del **ojo de la IA**: este libro enseña a desarrollar software cuando una máquina también lo está mirando, escribiendo y juzgando.
+
+## Desde Bolivia {.unnumbered}
+
+La entropía se ve distinto desde Bolivia: quien controla los datos controla el orden. La pregunta que atraviesa la Parte IV, y en especial el capítulo sobre soberanía de datos, sigue en pie: con datos e IA, ¿repetiremos el patrón de extraer materias primas para que otros las transformen, o construiremos tecnología propia?
+
+## Cómo está organizado {.unnumbered}
+
+- **Parte I — El orden:** fundamentos que la industria espera.
+- **Parte II — La perturbación:** desarrollar con inteligencia artificial.
+- **Parte III — La señal:** IA aplicada avanzada.
+- **Parte IV — El equilibrio:** Latinoamérica, sociedad y ética.
+
+Cada capítulo sigue el mismo recorrido, el **Ciclo Entrópico**, que se explica a continuación.

@@ -1,0 +1,3 @@
+# Parte I: El orden — Fundamentos para la industria {.unnumbered}
+
+En esta parte el sistema empieza en equilibrio. Se construyen los fundamentos que cualquier equipo profesional espera, y en cada capítulo se pregunta qué los degrada con el tiempo. El *Ojo de la IA* aparece como una ventana breve: cómo una IA leería, generaría o rompería el tema.

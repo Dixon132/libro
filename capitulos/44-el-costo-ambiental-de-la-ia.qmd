@@ -1,0 +1,54 @@
+---
+title: "El costo ambiental de la IA y los bosques que queremos proteger"
+estado: pendiente   # pendiente | borrador | revision | listo
+---
+
+::: {.callout-note collapse="true"}
+## Ficha del capítulo
+- **Objetivo de aprendizaje:** _(qué podrá hacer quien lea al terminar)_
+- **Prerrequisitos:** _(capítulos previos)_
+- **Proyecto guía:** _(qué pieza del sistema se construye o revisa aquí)_
+:::
+
+## Orden {#sec-c44-orden}
+
+<!-- El orden social de partida: datos, contexto e historia de la región. -->
+_Por escribir._ El orden social de partida: datos, contexto e historia de la región.
+
+## Entropía {#sec-c44-entropia}
+
+<!-- Qué desequilibra ese orden (brechas, extracción, exclusión, costos ocultos). -->
+_Por escribir._ Qué desequilibra ese orden (brechas, extracción, exclusión, costos ocultos).
+
+## Análisis {#sec-c44-analisis}
+
+_Por escribir._ Evidencia: cifras, casos, estudios y comparación regional.
+
+## Contención {#sec-c44-contencion}
+
+_Por escribir._ Iniciativas, políticas y prácticas que reducen la brecha o el daño.
+
+::: {.callout-important}
+## Reto
+_Describe aquí el reto práctico del capítulo._
+:::
+
+## Ojo de la IA {#sec-c44-ia}
+
+::: {.callout-tip icon="false"}
+## Ojo de la IA
+_Por escribir._ Qué ve el modelo y qué ignora sobre este tema.
+:::
+
+## Custodia {#sec-c44-custodia}
+
+::: {.callout-warning icon="false"}
+## Custodia
+_Por escribir._ Qué nos toca proteger y construir como desarrolladores latinoamericanos.
+:::
+
+## Para cerrar
+
+- **Ideas clave:** _(3 a 5 viñetas)_
+- **Preguntas de repaso:** _(3 preguntas)_
+- **Para profundizar:** _(fuentes con citas `[@clave]`)_

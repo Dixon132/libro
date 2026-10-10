@@ -1,0 +1,54 @@
+---
+title: "Cómo funciona un modelo de lenguaje: tokens, contexto y alucinaciones"
+estado: pendiente   # pendiente | borrador | revision | listo
+---
+
+::: {.callout-note collapse="true"}
+## Ficha del capítulo
+- **Objetivo de aprendizaje:** _(qué podrá hacer quien lea al terminar)_
+- **Prerrequisitos:** _(capítulos previos)_
+- **Proyecto guía:** _(qué pieza del sistema se construye o revisa aquí)_
+:::
+
+## Orden {#sec-c21-orden}
+
+<!-- La forma de trabajar antes de la IA: el flujo de referencia. -->
+_Por escribir._ La forma de trabajar antes de la IA: el flujo de referencia.
+
+## Entropía {#sec-c21-entropia}
+
+<!-- Qué desorden introduce la IA en este flujo (código no leído, dependencias no elegidas, falsa confianza). -->
+_Por escribir._ Qué desorden introduce la IA en este flujo (código no leído, dependencias no elegidas, falsa confianza).
+
+## Análisis {#sec-c21-analisis}
+
+_Por escribir._ Conceptos y técnicas para trabajar con la herramienta; comparación de enfoques.
+
+## Contención {#sec-c21-contencion}
+
+_Por escribir._ Prácticas de verificación y un reto práctico con la IA.
+
+::: {.callout-important}
+## Reto
+_Describe aquí el reto práctico del capítulo._
+:::
+
+## Ojo de la IA {#sec-c21-ia}
+
+::: {.callout-tip icon="false"}
+## Ojo de la IA
+_Por escribir._ Centro del capítulo: dónde ayuda, dónde se equivoca, ejemplos reales de prompts y salidas comentadas.
+:::
+
+## Custodia {#sec-c21-custodia}
+
+::: {.callout-warning icon="false"}
+## Custodia
+_Por escribir._ Quién responde por lo generado y, explícitamente, **cuándo no delegar**.
+:::
+
+## Para cerrar
+
+- **Ideas clave:** _(3 a 5 viñetas)_
+- **Preguntas de repaso:** _(3 preguntas)_
+- **Para profundizar:** _(fuentes con citas `[@clave]`)_

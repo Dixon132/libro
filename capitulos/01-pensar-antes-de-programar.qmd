@@ -1,0 +1,414 @@
+---
+title: "Pensar antes de programar: lógica, pensamiento computacional y pseudocódigo"
+estado: borrador   # pendiente | borrador | revision | listo
+---
+
+::: {.callout-note collapse="true"}
+## Ficha del capítulo
+- **Objetivo de aprendizaje:** convertir un problema cotidiano y ambiguo en un algoritmo preciso, escrito en pseudocódigo, verificado a mano con una prueba de escritorio y traducido a un programa corto.
+- **Prerrequisitos:** ninguno. Solo ganas de pensar despacio.
+- **Proyecto guía:** nace **Caserita**, el sistema del puesto de Doña Rosa. Aquí escribimos su primera pieza: el algoritmo que decide qué productos hay que reponer.
+:::
+
+::: {.grito}
+Primero se piensa.<br>Después se teclea.
+:::
+
+## Orden {#sec-c01-orden}
+
+### El puesto de Doña Rosa
+
+Doña Rosa tiene un puesto de abarrotes en el mercado. Arroz, azúcar, fideo, aceite, harina, sal. Lleva veintidós años ahí, y su sistema de información es perfecto: está en su cabeza y en un cuaderno de tapas azules.
+
+Cada sábado en la noche hace lo mismo:
+
+1. Abre el cuaderno.
+2. Recorre los estantes, producto por producto.
+3. Si de algo queda poco, lo anota en la lista del pedido.
+4. El domingo temprano va donde el mayorista con esa lista.
+
+Eso, aunque Doña Rosa no lo sepa, **es un algoritmo**. Tiene un inicio, pasos ordenados, una decisión que se repite y un final. Funciona, no se equivoca, y nadie tuvo que escribir una sola línea de código.
+
+::: {.pizarra}
+**Pizarra del Inge**
+
+Un **algoritmo** es una secuencia finita de pasos precisos que, a partir de unos datos de entrada, produce un resultado.
+
+Fíjate en las tres palabras que importan: *finita* (termina), *precisos* (no hay que adivinar), *resultado* (sirve para algo). La computadora es solo una de las muchas cosas que pueden ejecutar un algoritmo. Doña Rosa es otra.
+:::
+
+### La metáfora que nos acompañará todo el libro
+
+Este libro entero ocurre en un **mercado**. No es un capricho: un mercado es el mejor ejemplo que conozco de un sistema vivo que mantiene su orden peleando todos los días contra el desorden.
+
+| En el mercado | En el software | Dónde lo veremos |
+|---|---|---|
+| El puesto de Doña Rosa | Un programa | Este capítulo |
+| El cuaderno de tapas azules | Los datos | Caps. 3 y 9 |
+| La manera de anotar y decidir | El algoritmo | Caps. 1 y 4 |
+| Los pasillos y las reglas del mercado | La arquitectura | Cap. 10 |
+| Las caseras que se pasan pedidos | Las API | Cap. 12 |
+| El sobrino que ahora ayuda en el puesto | El equipo | Cap. 14 |
+| El inspector de la alcaldía | Las pruebas y la seguridad | Caps. 15 y 16 |
+| El ayudante que nunca duerme y a veces inventa | La IA | Parte II |
+| ¿Quién es dueño de lo que sabe el mercado? | La soberanía de datos | Parte IV |
+
+: El mercado como mapa del libro {#tbl-c01-metafora}
+
+Y no recorrerás el mercado solo. Te acompaña **el Inge**: un ingeniero con cincuenta años de oficio que empezó perforando tarjetas y hoy revisa código generado por IA. Es un personaje, pero sus consejos son los que el oficio enseña a golpes. Cuando veas una **pizarra** como las de este capítulo, es él quien habla.
+
+A lo largo del libro vamos a construir **Caserita**, el sistema del puesto. Empieza hoy como una lista escrita a mano y terminará, muchos capítulos después, como un sistema con base de datos, API, pruebas, despliegue y un asistente con IA. Cada capítulo le agrega una pieza, y cada pieza trae su propia entropía.
+
+## Entropía {#sec-c01-entropia}
+
+### Lo que pasa cuando el puesto crece
+
+Un día Doña Rosa se enferma y su sobrino Marco tiene que hacer el pedido del sábado. Ella, desde la cama, le dice:
+
+> —Fíjate qué falta y pide lo de siempre.
+
+Marco es inteligente y tiene buena voluntad. Aun así, vuelve el domingo con 50 kilos de sal (había poca, pero se vende poco) y sin aceite (había tres botellas, que a Marco le parecieron suficientes, pero el aceite se acaba en un día).
+
+¿Falló Marco? No. **Falló la instrucción.** "Fíjate qué falta" y "lo de siempre" son frases cargadas de conocimiento que solo existe en la cabeza de Doña Rosa:
+
+- ¿Cuánto es "poco" para cada producto?
+- ¿Cuánto es "lo de siempre"?
+- ¿Qué pasa con lo que se vende rápido y con lo que se vende lento?
+
+::: {.recorte}
+Una instrucción ambigua es una instrucción que obliga a quien la recibe a adivinar. Y cuando dos personas adivinan, adivinan distinto.
+:::
+
+Esto es **entropía en su sentido de información** [@shannon1948]: incertidumbre. Mientras el conocimiento vive en una sola cabeza, la incertidumbre no se nota. En cuanto el sistema crece (otra persona, más productos, más días), cada ambigüedad se convierte en un error posible.
+
+### Por qué la solución obvia no alcanza
+
+La tentación de quien está aprendiendo a programar es sentarse y teclear: "hago un programa de inventario". Abre el editor, crea variables, escribe `if` por todas partes... y a las dos horas tiene un programa que funciona para el arroz, falla con el aceite y nadie, ni siquiera su autor, sabe explicar qué decide ni por qué.
+
+El problema no era de código. Era de **pensamiento**. Fred Brooks lo dijo hace décadas: lo difícil del software no es escribirlo, sino decidir *qué* debe hacer exactamente; esa es su complejidad esencial, y ninguna herramienta la elimina [@brooks1987].
+
+```{mermaid}
+%%| fig-cap: "Dos caminos para el mismo problema"
+flowchart LR
+  P[Problema ambiguo] --> T[Teclear de inmediato]
+  T --> C1[Código que adivina]
+  C1 --> E[Errores que nadie entiende]
+  P --> PI[Pensar primero]
+  PI --> A[Algoritmo preciso]
+  A --> C2[Código que se explica solo]
+```
+
+## Análisis {#sec-c01-analisis}
+
+En esta sección vamos a hacer lo que Marco no pudo: tomar el "fíjate qué falta" de Doña Rosa y convertirlo en algo que cualquiera, persona o máquina, ejecute igual. Para eso necesitamos tres herramientas: **pensamiento computacional**, **lógica** y **pseudocódigo**.
+
+### Pensamiento computacional: cuatro maneras de mirar un problema
+
+Jeannette Wing popularizó la idea de que el pensamiento computacional es una habilidad para todos, no solo para programadores: formular problemas de manera que sus soluciones puedan ejecutarse con precisión [@wing2006]. Suele enseñarse en cuatro movimientos:
+
+| Movimiento | Pregunta que te haces | En el puesto de Doña Rosa |
+|---|---|---|
+| **Descomposición** | ¿En qué partes pequeñas se divide? | Revisar un producto, decidir si falta, calcular cuánto pedir, armar la lista |
+| **Patrones** | ¿Qué se repite? | Para *cada* producto hago lo mismo |
+| **Abstracción** | ¿Qué datos importan y cuáles sobran? | Importan stock, mínimo y lote. No importa el color del paquete |
+| **Algoritmo** | ¿Cuáles son los pasos exactos? | La receta que vamos a escribir abajo |
+
+: Los cuatro movimientos del pensamiento computacional {#tbl-c01-pc}
+
+La abstracción es la que más cuesta y la que más vale. De todo lo que Doña Rosa sabe de un producto, para decidir el pedido solo necesitamos tres datos:
+
+- **stock**: cuántas unidades hay ahora.
+- **mínimo**: por debajo de cuánto hay que reponer. *Este es el "poco" que Marco no conocía.*
+- **lote**: cuánto se compra cada vez. *Este es el "lo de siempre".*
+
+::: {.pizarra}
+**Pizarra del Inge**
+
+Abstraer no es simplificar por flojera. Es **elegir qué ignorar a propósito**. Todo modelo miente un poco; uno bueno miente en lo que no importa.
+:::
+
+### Lógica: decidir sin adivinar
+
+Cada decisión de un algoritmo es una **proposición**: una afirmación que es verdadera o falsa, sin término medio.
+
+- "Queda poco arroz" → no es proposición (¿cuánto es poco?).
+- "El stock de arroz es menor que 10" → sí lo es.
+
+Las proposiciones se combinan con tres conectores:
+
+| Conector | Se escribe | Es verdadero cuando… |
+|---|---|---|
+| Y | `A Y B` | ambas son verdaderas |
+| O | `A O B` | al menos una es verdadera |
+| NO | `NO A` | A es falsa |
+
+: Conectores lógicos {#tbl-c01-conectores}
+
+Doña Rosa, en realidad, tiene una regla un poco más fina: *repone si queda menos del mínimo, **o** si es fin de mes y el producto es de los que más se venden* (a fin de mes la gente cobra y compra más). Escribámosla con letras:
+
+- **A** = stock < mínimo
+- **B** = es fin de mes
+- **C** = es producto de alta rotación
+
+**Reponer = A O (B Y C)**
+
+La tabla de verdad nos muestra todos los casos posibles. Ocho filas, ninguna sorpresa:
+
+| A | B | C | B Y C | A O (B Y C) | ¿Reponer? |
+|:-:|:-:|:-:|:-:|:-:|---|
+| V | V | V | V | **V** | Sí |
+| V | V | F | F | **V** | Sí |
+| V | F | V | F | **V** | Sí |
+| V | F | F | F | **V** | Sí |
+| F | V | V | V | **V** | Sí: fin de mes y se vende mucho |
+| F | V | F | F | F | No |
+| F | F | V | F | F | No |
+| F | F | F | F | F | No |
+
+: Tabla de verdad de la regla de reposición {#tbl-c01-verdad}
+
+::: {.callout-tip icon="false"}
+## Truco del oficio
+Si una condición tiene tres o más piezas, **haz la tabla de verdad antes de escribir el `if`**. Cinco minutos de tabla ahorran una tarde de depuración.
+:::
+
+### Pseudocódigo: escribir el algoritmo para humanos
+
+El pseudocódigo es un algoritmo escrito en lenguaje casi natural, con una estructura casi de programa. No lo ejecuta ninguna máquina: lo ejecuta tu cabeza. Su único trabajo es **eliminar la ambigüedad** antes de que llegue al código.
+
+Usaremos pocas palabras clave en todo el libro:
+
+| Palabra clave | Para qué sirve |
+|---|---|
+| `INICIO` / `FIN` | Marcan dónde empieza y termina |
+| `LEER` / `MOSTRAR` | Entrada y salida de datos |
+| `←` | Asignar un valor: `total ← 0` |
+| `SI … ENTONCES … SINO … FIN SI` | Decidir |
+| `PARA CADA … EN … HACER … FIN PARA` | Repetir sobre una colección |
+| `MIENTRAS … HACER … FIN MIENTRAS` | Repetir mientras se cumpla algo |
+
+: Vocabulario de pseudocódigo del libro {#tbl-c01-pseudo}
+
+Y así queda el "fíjate qué falta" de Doña Rosa, ya sin ambigüedad. Primero míralo como dibujo, y luego como pseudocódigo y como programa en Python (cambia de pestaña).
+
+```{mermaid}
+%%| fig-cap: "ReponerPuesto como diagrama de flujo"
+flowchart TD
+  I([Inicio]) --> L[/Leer productos y fin de mes/]
+  L --> V[pedido ← vacío]
+  V --> Q{¿Quedan productos<br>por revisar?}
+  Q -- No --> M[/Mostrar pedido/]
+  M --> F([Fin])
+  Q -- Sí --> T[Tomar el siguiente producto]
+  T --> D{"stock < mínimo<br>O (fin de mes Y alta rotación)"}
+  D -- Sí --> A[Agregar nombre y lote al pedido]
+  D -- No --> Q
+  A --> Q
+```
+
+::: {.panel-tabset}
+
+## Pseudocódigo
+
+```
+ALGORITMO ReponerPuesto
+INICIO
+    LEER productos              // cada uno con: nombre, stock, minimo, lote, alta_rotacion
+    LEER es_fin_de_mes
+    pedido ← lista vacía
+
+    PARA CADA producto EN productos HACER
+        falta      ← producto.stock < producto.minimo
+        empuje_mes ← es_fin_de_mes Y producto.alta_rotacion
+
+        SI falta O empuje_mes ENTONCES
+            agregar (producto.nombre, producto.lote) a pedido
+        FIN SI
+    FIN PARA
+
+    MOSTRAR pedido
+FIN
+```
+
+## Python
+
+```python
+productos = [                                                         # <1>
+    {"nombre": "arroz",  "stock": 4,  "minimo": 10, "lote": 25, "alta_rotacion": True},
+    {"nombre": "sal",    "stock": 6,  "minimo": 5,  "lote": 10, "alta_rotacion": False},
+    {"nombre": "aceite", "stock": 3,  "minimo": 6,  "lote": 12, "alta_rotacion": True},
+    {"nombre": "fideo",  "stock": 20, "minimo": 8,  "lote": 20, "alta_rotacion": True},
+]
+
+def reponer_puesto(productos, es_fin_de_mes):
+    pedido = []
+    for producto in productos:                                        # <2>
+        falta = producto["stock"] < producto["minimo"]                # <3>
+        empuje_mes = es_fin_de_mes and producto["alta_rotacion"]
+        if falta or empuje_mes:                                       # <4>
+            pedido.append((producto["nombre"], producto["lote"]))
+    return pedido
+
+print(reponer_puesto(productos, es_fin_de_mes=False))
+# [('arroz', 25), ('aceite', 12)]
+print(reponer_puesto(productos, es_fin_de_mes=True))
+# [('arroz', 25), ('aceite', 12), ('fideo', 20)]
+```
+1. La **abstracción** hecha datos: de cada producto guardamos solo lo que el algoritmo necesita.
+2. El **patrón** que se repite: para cada producto, lo mismo.
+3. Las proposiciones A, B y C de la tabla de verdad, ahora con nombre.
+4. La regla `A O (B Y C)`, exactamente como la escribimos en lógica.
+
+:::
+
+Fíjate en algo importante: **el programa en Python es casi una traducción línea por línea del pseudocódigo.** Cuando el pensamiento está bien hecho, programar se vuelve transcribir. Por eso este capítulo va primero.
+
+### La prueba de escritorio: ejecutar el algoritmo con lápiz
+
+Antes de confiar en un algoritmo, se ejecuta a mano con datos concretos, anotando cómo cambian las variables. A eso se le llama **prueba de escritorio**. Hagámosla con los datos de arriba y `es_fin_de_mes = Falso`:
+
+| Vuelta | producto | stock < mínimo | fin de mes Y alta rotación | ¿Reponer? | pedido después |
+|:-:|---|:-:|:-:|:-:|---|
+| 1 | arroz | 4 < 10 → V | F | Sí | [arroz 25] |
+| 2 | sal | 6 < 5 → F | F | No | [arroz 25] |
+| 3 | aceite | 3 < 6 → V | F | Sí | [arroz 25, aceite 12] |
+| 4 | fideo | 20 < 8 → F | F | No | [arroz 25, aceite 12] |
+
+: Prueba de escritorio de ReponerPuesto {#tbl-c01-escritorio}
+
+Resultado: arroz y aceite. **Justo lo que Marco no supo hacer.** Y la sal, que él compró de más, queda fuera por una razón explícita: su stock (6) no está por debajo de su mínimo (5).
+
+### El método de los cuatro pasos
+
+En 1945, el matemático George Pólya propuso un método para resolver problemas que sigue siendo, ochenta años después, la mejor guía para empezar cualquier programa [@polya1945]:
+
+```{mermaid}
+%%| fig-cap: "Los cuatro pasos de Pólya, aplicados a programar"
+flowchart LR
+  E[Paso 1: Entender<br>¿qué entra?, ¿qué sale?,<br>¿qué es ambiguo?] --> P[Paso 2: Planear<br>descomponer y<br>escribir pseudocódigo]
+  P --> X[Paso 3: Ejecutar<br>prueba de escritorio,<br>luego código]
+  X --> R[Paso 4: Revisar<br>¿funciona en los bordes?,<br>¿se puede simplificar?]
+  R -.-> E
+```
+
+Nota el paso 1: **entender** va antes que todo. La mitad de los errores en software no son errores de programación: son problemas que nadie terminó de entender.
+
+## Contención {#sec-c01-contencion}
+
+El desorden de este capítulo es la **ambigüedad**. Estas prácticas lo frenan:
+
+::: {.manifiesto}
+1. Ningún programa sin antes escribir qué entra y qué sale.
+2. Ninguna palabra vaga en el pseudocódigo: "poco", "mucho", "lo de siempre" se convierten en números.
+3. Ninguna condición de tres piezas sin su tabla de verdad.
+4. Ningún algoritmo sin prueba de escritorio con al menos tres casos.
+5. Siempre un caso borde: cero, vacío, el número justo en el límite.
+:::
+
+### Los casos borde: donde vive la entropía
+
+¿Qué pasa si el stock de sal es **exactamente** 5 y su mínimo es 5? Con nuestra regla (`stock < mínimo`), **no** se repone. ¿Es eso lo que quiere Doña Rosa? No lo sabemos: hay que **preguntarle**. Esa pregunta, hecha a tiempo, vale más que cien líneas de código.
+
+| Caso borde | ¿Qué hace nuestro algoritmo? | ¿Es correcto? |
+|---|---|---|
+| Lista de productos vacía | Devuelve un pedido vacío | Sí |
+| stock = mínimo | No repone | **Preguntar a Doña Rosa** |
+| stock negativo (error al anotar) | Repone | Funciona, pero esconde un error de datos |
+| lote = 0 | Agrega un pedido de 0 unidades | No: hay que validar |
+
+: Casos borde de ReponerPuesto {#tbl-c01-bordes}
+
+::: {.callout-important}
+## Reto: el algoritmo del fiado
+
+Doña Rosa **fía** (vende a crédito) a sus caseros de confianza. Te dicta su regla así:
+
+> "Le fío al que conozco, siempre que no me deba mucho y no me esté debiendo desde hace tiempo."
+
+1. **Entender:** subraya todas las palabras ambiguas. Propón un número para cada una (por ejemplo, "mucho" = más de 100 Bs).
+2. **Abstraer:** ¿qué datos necesitas de cada casero? Haz una lista de máximo cuatro.
+3. **Lógica:** escribe la regla con proposiciones A, B, C y arma su tabla de verdad.
+4. **Pseudocódigo:** escribe el algoritmo `DecidirFiado` con el vocabulario del libro.
+5. **Prueba de escritorio:** ejecútalo a mano con cinco caseros inventados; al menos dos deben ser casos borde.
+6. **Opcional:** tradúcelo a Python siguiendo el modelo de `reponer_puesto`.
+
+**Criterio de logro:** otra persona puede ejecutar tu pseudocódigo con tus cinco caseros y obtener *exactamente* tus mismos resultados, sin preguntarte nada.
+:::
+
+## Ojo de la IA {#sec-c01-ia}
+
+::: {.callout-tip icon="false"}
+## Ojo de la IA
+Hoy puedes pedirle a una IA "hazme un programa de inventario" y en segundos tendrás cien líneas de código. Parece que este capítulo sobra. Es al revés.
+
+La IA es **Marco con esteroides**: recibe una instrucción ambigua y, en vez de preguntarte, **adivina con mucha seguridad**. Mira la diferencia:
+
+::: {.panel-tabset}
+## Pedido vago
+
+```
+Hazme un programa que me diga qué productos reponer en mi tienda.
+```
+
+La IA tiene que inventar qué es "reponer", qué es "poco" y qué datos hay. Inventará algo razonable… y probablemente distinto de lo que necesita Doña Rosa.
+
+## Pedido pensado
+
+```
+Escribe una función en Python reponer_puesto(productos, es_fin_de_mes).
+Cada producto es un diccionario con: nombre, stock, minimo, lote, alta_rotacion.
+Regla: reponer si stock < minimo, O si es fin de mes Y alta_rotacion.
+Devuelve una lista de tuplas (nombre, lote).
+Casos de prueba: [aquí van las filas de tu prueba de escritorio]
+```
+
+Esto es **pseudocódigo convertido en prompt**. La IA ya no adivina: traduce.
+:::
+
+**Lo que debe revisar una persona:** que el código generado cumpla tu tabla de verdad y tus casos borde. La IA te ahorra teclear, **no te ahorra pensar**. En la Parte II volveremos a esto con mucho más detalle (@sec-c23-ia).
+:::
+
+## Custodia {#sec-c01-custodia}
+
+::: {.callout-warning icon="false"}
+## Custodia
+Vuelve al reto del fiado. Cuando conviertes "le fío al que conozco" en `SI deuda < 100 Y dias_de_deuda < 15`, haces algo más que programar: **estás escribiendo una decisión sobre personas.**
+
+Doña Rosa, en la vida real, a veces fía de más a la vecina que acaba de perder su trabajo. Su regla escrita no lo sabe. Un algoritmo aplica sus criterios igual a todos, y eso es justo… hasta que deja de serlo.
+
+Preguntas para ti, que escribes la regla:
+
+- ¿Quién eligió el número 100? ¿Con qué derecho?
+- ¿Tu algoritmo deja espacio para que una persona diga "esta vez sí"?
+- Si mañana el mercado entero usa tu regla, ¿a quién deja afuera?
+
+Pensar antes de programar también es **pensar en a quién afecta lo que programas**.
+:::
+
+## Para cerrar
+
+::: {.pizarra}
+**Pizarra del Inge — lo que te llevas**
+
+- Un algoritmo es una receta **finita, precisa y útil**; la computadora es solo uno de sus ejecutores.
+- La entropía de este capítulo es la **ambigüedad**: cada palabra vaga es un error esperando ocurrir.
+- Pensamiento computacional: **descomponer, ver patrones, abstraer, escribir el algoritmo**.
+- Lógica para decidir; **tabla de verdad** cuando la condición tiene tres o más piezas.
+- Pseudocódigo + prueba de escritorio **antes** del código. Bien pensado, programar es transcribir.
+:::
+
+**Preguntas de repaso**
+
+1. ¿Por qué "fíjate qué falta" no es un algoritmo y "repone si stock < mínimo" sí lo es?
+2. En la regla `A O (B Y C)`, ¿qué cambia si la escribimos `(A O B) Y C`? Arma ambas tablas de verdad y compara.
+3. ¿Qué caso borde de tu algoritmo del fiado te obligó a preguntarle algo a Doña Rosa?
+
+**Para profundizar**
+
+- Wing, *Computational Thinking* [@wing2006]: el texto corto que puso el tema en la agenda educativa.
+- Pólya, *How to Solve It* [@polya1945]: el método de los cuatro pasos, aplicable a cualquier problema.
+- Brooks, *No Silver Bullet* [@brooks1987]: por qué lo difícil del software es decidir qué hacer.
+
+::: {.callout-note appearance="minimal"}
+**Caserita, versión 0.1:** una función que decide el pedido del sábado. En el próximo capítulo le daremos un lenguaje de verdad, y empezará a crecer.
+:::
