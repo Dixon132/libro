@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 760" width="800" height="760">
+  <!-- El puesto de Doña Rosa -->
+  <defs>
+    <pattern id="toldo" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="50" height="100" fill="#e10600"/><rect x="50" width="50" height="100" fill="#f2efe6"/>
+    </pattern>
+    <pattern id="trama" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.4" fill="#111" opacity=".25"/>
+    </pattern>
+  </defs>
+
+  <!-- letrero -->
+  <g transform="rotate(-2 400 60)">
+    <rect x="110" y="20" width="600" height="80" fill="#111"/>
+    <rect x="96" y="8" width="600" height="80" fill="#ffd400" stroke="#111" stroke-width="7"/>
+    <text x="396" y="62" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="34" fill="#111">ABARROTES DOÑA ROSA</text>
+  </g>
+
+  <!-- toldo -->
+  <path d="M40 120 H760 L790 230 Q752 265 714 230 Q676 265 638 230 Q600 265 562 230 Q524 265 486 230 Q448 265 410 230 Q372 265 334 230 Q296 265 258 230 Q220 265 182 230 Q144 265 106 230 Q68 265 30 230 L10 230 Z" fill="url(#toldo)" stroke="#111" stroke-width="7"/>
+
+  <!-- postes -->
+  <rect x="60" y="240" width="22" height="500" fill="#111"/>
+  <rect x="718" y="240" width="22" height="500" fill="#111"/>
+
+  <!-- estante -->
+  <g stroke="#111" stroke-width="6">
+    <rect x="110" y="270" width="580" height="200" fill="#f2efe6"/>
+    <rect x="110" y="270" width="580" height="200" fill="url(#trama)"/>
+    <line x1="110" y1="370" x2="690" y2="370"/>
+    <!-- fila 1: botellas y latas -->
+    <rect x="140" y="300" width="36" height="66" fill="#ffd400"/>
+    <rect x="186" y="300" width="36" height="66" fill="#ffd400"/>
+    <rect x="232" y="300" width="36" height="66" fill="#ffd400"/>
+    <rect x="300" y="320" width="50" height="46" fill="#0033ff"/>
+    <rect x="360" y="320" width="50" height="46" fill="#0033ff"/>
+    <rect x="440" y="310" width="80" height="56" fill="#f2efe6"/>
+    <rect x="540" y="310" width="120" height="56" fill="#e10600"/>
+    <!-- fila 2: paquetes -->
+    <rect x="140" y="390" width="70" height="76" fill="#f2efe6"/>
+    <rect x="220" y="390" width="70" height="76" fill="#f2efe6"/>
+    <rect x="320" y="400" width="110" height="66" fill="#ffd400"/>
+    <rect x="450" y="395" width="90" height="71" fill="#f2efe6"/>
+    <rect x="560" y="395" width="100" height="71" fill="#0033ff"/>
+  </g>
+
+  <!-- mostrador con sacos -->
+  <rect x="96" y="560" width="620" height="180" fill="#111"/>
+  <rect x="80" y="548" width="620" height="180" fill="#f2efe6" stroke="#111" stroke-width="7"/>
+  <g stroke="#111" stroke-width="6" font-family="'Arial Black', Impact, sans-serif" font-size="24" text-anchor="middle">
+    <path d="M120 548 Q170 470 220 548 Z" fill="#f2efe6"/>
+    <path d="M250 548 Q305 455 360 548 Z" fill="#ffd400"/>
+    <path d="M390 548 Q445 470 500 548 Z" fill="#f2efe6"/>
+    <path d="M530 548 Q590 460 650 548 Z" fill="#f2efe6"/>
+    <text x="170" y="540" stroke="none" font-size="18">ARROZ</text>
+    <text x="305" y="540" stroke="none" font-size="18">AZÚCAR</text>
+    <text x="445" y="540" stroke="none" font-size="18">SAL</text>
+    <text x="590" y="540" stroke="none" font-size="18">HARINA</text>
+  </g>
+  <!-- cuaderno sobre el mostrador -->
+  <g transform="translate(470 600) rotate(-8)">
+    <rect width="170" height="110" fill="#0033ff" stroke="#111" stroke-width="6"/>
+    <rect x="14" y="14" width="142" height="82" fill="#f2efe6" stroke="#111" stroke-width="3"/>
+    <g stroke="#111" stroke-width="3"><line x1="26" y1="38" x2="140" y2="38"/><line x1="26" y1="58" x2="120" y2="58"/><line x1="26" y1="78" x2="132" y2="78"/></g>
+  </g>
+  <text x="120" y="650" font-family="'Courier New', monospace" font-weight="700" font-size="22" fill="#111">PUESTO 47</text>
+  <text x="120" y="682" font-family="'Courier New', monospace" font-size="18" fill="#111">22 años · 1 cuaderno</text>
+</svg>

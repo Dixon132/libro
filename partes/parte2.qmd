@@ -1,3 +1,5 @@
 # Parte II: La perturbación — Desarrollar con inteligencia artificial {.unnumbered}
 
+::: {.parte-intro}
 Aquí entra la perturbación: una máquina que escribe código a una velocidad que multiplica el desorden potencial. El *Ojo de la IA* pasa al centro de cada capítulo y la *Custodia* incluye una pregunta obligatoria: cuándo no delegar.
+:::

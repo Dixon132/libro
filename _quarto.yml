@@ -1,6 +1,9 @@
 project:
   type: book
   output-dir: _book
+  resources:
+    - hojear.html
+    - imagenes/**
 
 lang: es
 
@@ -14,9 +17,18 @@ book:
   search: true
   cover-image: portada/portada.svg
   cover-image-alt: "Portada collage: CÓDIGO ENTRÓPICO, un ojo y bloques de color"
-  downloads: [pdf, epub]
+  output-file: codigo-entropico
+  sidebar:
+    tools:
+      - icon: book-half
+        href: hojear.html
+        text: "Hojear el libro impreso"
+      - icon: file-earmark-pdf
+        href: codigo-entropico.pdf
+        text: "Descargar PDF"
   chapters:
     - index.qmd
+    - introduccion.qmd
     - ciclo-entropico.qmd
     - part: partes/parte1.qmd
       chapters:
@@ -79,6 +91,16 @@ book:
 bibliography: references.bib
 crossref:
   chapters: true
+  lst-prefix: "Código"
+  lst-title: "Código"
+
+filters:
+  - estilos/filtros/libro.lua
+  - quarto
+  - estilos/filtros/libro-post.lua
+
+mermaid:
+  theme: neutral
 
 format:
   html:
@@ -90,10 +112,17 @@ format:
     code-copy: true
     code-overflow: wrap
     highlight-style: github
-  typst:
-    keep-typ: true
-    toc: true
+  typst:                                  # versión impresa (PDF) — diseño en estilos/typst/
+    keep-typ: false
+    toc: false                            # el índice lo dibuja la plantilla
     number-sections: true
+    fig-width: 4.8
+    bibliographystyle: apa
+    template-partials:
+      - estilos/typst/typst-template.typ
+      - estilos/typst/typst-show.typ
+      - estilos/typst/page.typ
+      - estilos/typst/numbering.typ
   epub:
     toc: true
 

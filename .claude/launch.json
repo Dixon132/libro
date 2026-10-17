@@ -4,7 +4,7 @@
     {
       "name": "libro",
       "runtimeExecutable": "C:\\Program Files\\Quarto\\bin\\quarto.exe",
-      "runtimeArgs": ["preview", "--to", "html", "--no-browser", "--port", "4848"],
+      "runtimeArgs": ["preview", "--no-render", "--to", "html", "--no-browser", "--port", "4848"],
       "port": 4848
     }
   ]

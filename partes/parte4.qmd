@@ -1,3 +1,5 @@
 # Parte IV: El equilibrio — Latinoamérica, sociedad y ética {.unnumbered}
 
+::: {.parte-intro}
 El orden y la entropía se vuelven sociales: talento, datos, lenguas, territorio. El *Ojo de la IA* pregunta qué ve el modelo y qué ignora, y la *Custodia* mira a Bolivia y a la región.
+:::

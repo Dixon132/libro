@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560">
+  <!-- Marco y "lo de siempre": 50 kg de sal y cero aceite -->
+  <defs>
+    <pattern id="trama" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.5" fill="#111" opacity=".3"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="560" fill="#f2efe6"/>
+
+  <!-- franja título -->
+  <g transform="rotate(-2 450 60)">
+    <rect x="40" y="25" width="820" height="70" fill="#111"/>
+    <text x="450" y="73" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="40" fill="#ffd400">"LO DE SIEMPRE" = ¿?</text>
+  </g>
+
+  <!-- saco enorme de sal -->
+  <g transform="translate(70 150) rotate(-4)">
+    <rect x="16" y="16" width="330" height="340" fill="#111"/>
+    <path d="M0 50 Q165 -10 330 50 L315 340 H15 Z" fill="#f2efe6" stroke="#111" stroke-width="8"/>
+    <path d="M0 50 Q165 -10 330 50 L315 340 H15 Z" fill="url(#trama)"/>
+    <text x="165" y="190" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="72" fill="#111">SAL</text>
+    <rect x="70" y="215" width="190" height="64" fill="#e10600" stroke="#111" stroke-width="6"/>
+    <text x="165" y="262" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="42" fill="#f2efe6">50 KG</text>
+  </g>
+  <text x="90" y="535" font-family="'Courier New', monospace" font-weight="700" font-size="22" fill="#111">había poca… pero se vende poco</text>
+
+  <!-- botella vacía de aceite -->
+  <g transform="translate(560 150)">
+    <rect x="70" y="0" width="60" height="60" fill="#f2efe6" stroke="#111" stroke-width="7" stroke-dasharray="14 10"/>
+    <rect x="20" y="60" width="160" height="290" fill="none" stroke="#111" stroke-width="7" stroke-dasharray="16 12"/>
+    <text x="100" y="230" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="96" fill="#e10600">0</text>
+    <text x="100" y="290" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="30" fill="#111">ACEITE</text>
+  </g>
+  <text x="520" y="535" font-family="'Courier New', monospace" font-weight="700" font-size="22" fill="#111">había 3… y se acaba en un día</text>
+
+  <!-- signos de pregunta -->
+  <g font-family="'Arial Black', Impact, sans-serif" fill="#0033ff">
+    <text x="440" y="250" font-size="120" transform="rotate(12 470 210)">?</text>
+    <text x="800" y="200" font-size="80" transform="rotate(-14 820 170)">?</text>
+  </g>
+</svg>

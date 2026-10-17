@@ -113,6 +113,58 @@ Mínimos para que el capítulo sea "bien visual":
 
 En la Parte IV el código puede bajar, pero no los diagramas ni las tablas de datos.
 
+## 3d. Identidad visual propia de cada capítulo
+
+Cada capítulo tiene **su propio estilo dentro del sistema**. Justo debajo del YAML va:
+
+```markdown
+::: {.estilo-capitulo acento="rojo" motivo="rayas" imagen="../imagenes/capNN/apertura.svg"}
+:::
+```
+
+- `acento`: `rojo`, `azul`, `amarillo`, `verde`, `naranja`, `violeta` o `tinta`. Pinta el número gigante de la apertura, los números de sección, el grito, el manifiesto y los pies de figura.
+  Sugerencia: no repitas el acento de los capítulos vecinos.
+- `motivo` (se usa si no hay imagen): `rayas`, `puntos`, `cuadricula` o `ruido`.
+- `imagen`: banda de apertura de 1600 × 650 px (SVG o PNG) en `imagenes/capNN/`.
+
+## 3e. Imágenes dentro del texto (no solo cajas en medio)
+
+Las ilustraciones van en `imagenes/capNN/`, en estilo collage brutalista: paleta del libro, contornos negros gruesos, sombra sólida desplazada, etiquetas mecanografiadas. Puedes dibujarlas en SVG.
+**La imagen va siempre primero dentro del div**, y siempre con etiqueta `#fig-cNN-...` para que se numere:
+
+```markdown
+::: {.figura-der ancho="44%"}
+![Pie de figura.](../imagenes/cap01/puesto.svg){#fig-c01-puesto}
+
+Párrafos que quedan AL LADO de la imagen (la imagen "repele" el texto).
+:::
+
+::: {.figura-izq ancho="36%"}       (igual, con la imagen a la izquierda)
+
+::: {.figura-pie lado="izq" ancho="62%"}
+![Pie.](../imagenes/cap01/marco.svg){#fig-c01-marco}
+:::                                   (en papel: anclada ABAJO de la hoja, debajo del texto)
+```
+
+Imagen a todo el ancho: `![Pie.](ruta){#fig-cNN-x}` sin div. Mínimo por capítulo: 1 imagen de apertura y 3 ilustraciones, con al menos una `figura-izq` o `figura-der` y una `figura-pie`.
+
+## 3f. Referencias numeradas: solo si se citan
+
+Numera un bloque con etiqueta **solo si el texto lo menciona** (por ejemplo, "como en el @lst-c01-reponer"). Si nadie lo menciona, no lleva número.
+
+- Código: ```` ```{#lst-cNN-nombre .python lst-cap="Qué hace"} ```` y en el texto `@lst-cNN-nombre`, que se lee "Código 1.1".
+- Figuras `#fig-cNN-…` ("Figura 1.2"), tablas `{#tbl-cNN-…}` ("Tabla 1.3") y secciones `@sec-cNN-…`.
+- Los diagramas mermaid se numeran con `%%| label: fig-cNN-…` y `%%| fig-cap: "…"`.
+- Las etiquetas se escriben siempre con el prefijo del capítulo (`c01`, `c14`…) para que no choquen.
+
+## 3g. Reglas para que funcione en web Y en papel
+
+- Nada de HTML crudo (`<br>`, `<span>`): para saltar de línea usa `\` al final de la línea.
+- No pongas mermaid dentro de `.panel-tabset`; las pestañas en papel se imprimen una tras otra con su etiqueta.
+- Las etiquetas de mermaid no deben empezar con "1. " (se leen como lista); usa "Paso 1: …".
+- Prefiere los diagramas verticales (`flowchart TB`/`TD`) o los horizontales con pocos nodos: en papel el ancho es de 12,8 cm.
+- No numeres los títulos a mano.
+
 ## 4. Tono: brutalista + dadaísta
 
 - **Brutalista:** frases cortas, honestidad estructural, se muestran las costuras (el código, el log, el error real).
@@ -138,7 +190,10 @@ En la Parte IV el código puede bajar, pero no los diagramas ni las tablas de da
 - [ ] Peso correcto según la parte
 - [ ] Citas en `references.bib`; dudas marcadas `[VERIFICAR]`
 - [ ] Al menos un momento formalmente libre/sorpresivo
-- [ ] Si Quarto está instalado: `quarto render capitulos/NN-*.qmd --to html` sin errores
+- [ ] `estilo-capitulo` con un acento distinto al de los capítulos vecinos
+- [ ] Apertura y 3 o más ilustraciones con `#fig-`; al menos una al costado y una al pie
+- [ ] Bloques numerados solo si se citan en el texto
+- [ ] `.\construir.ps1` termina sin errores, y el capítulo se revisó en `hojear.html` (papel) y en la web
 
 ## 7. Al terminar: actualizar la bitácora (obligatorio)
 

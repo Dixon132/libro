@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 470" width="1240" height="470">
+  <!-- Los cuatro movimientos del pensamiento computacional, en el puesto -->
+  <rect width="1240" height="470" fill="#f2efe6"/>
+  <g font-family="'Arial Black', Impact, sans-serif">
+
+    <!-- 1 DESCOMPONER -->
+    <g transform="translate(20 20)">
+      <rect x="8" y="8" width="280" height="420" fill="#111"/>
+      <rect width="280" height="420" fill="#fff" stroke="#111" stroke-width="6"/>
+      <rect width="280" height="56" fill="#e10600" stroke="#111" stroke-width="6"/>
+      <text x="16" y="40" font-size="26" fill="#f2efe6">1 · DESCOMPONER</text>
+      <rect x="40" y="90" width="200" height="90" fill="#ffd400" stroke="#111" stroke-width="6"/>
+      <text x="140" y="146" text-anchor="middle" font-size="20" fill="#111">EL PEDIDO</text>
+      <path d="M140 185 V210" stroke="#111" stroke-width="6"/>
+      <g stroke="#111" stroke-width="5" fill="#f2efe6">
+        <rect x="20" y="215" width="115" height="70"/><rect x="145" y="215" width="115" height="70"/>
+        <rect x="20" y="295" width="115" height="70"/><rect x="145" y="295" width="115" height="70"/>
+      </g>
+      <g font-family="'Courier New', monospace" font-weight="700" font-size="16" fill="#111" text-anchor="middle">
+        <text x="77" y="256">revisar</text><text x="202" y="256">¿falta?</text>
+        <text x="77" y="336">¿cuánto?</text><text x="202" y="336">anotar</text>
+      </g>
+      <text x="140" y="404" text-anchor="middle" font-family="'Courier New', monospace" font-size="15" fill="#111">un problema grande = varios chicos</text>
+    </g>
+
+    <!-- 2 PATRONES -->
+    <g transform="translate(325 20)">
+      <rect x="8" y="8" width="280" height="420" fill="#111"/>
+      <rect width="280" height="420" fill="#fff" stroke="#111" stroke-width="6"/>
+      <rect width="280" height="56" fill="#0033ff" stroke="#111" stroke-width="6"/>
+      <text x="16" y="40" font-size="26" fill="#f2efe6">2 · PATRONES</text>
+      <g stroke="#111" stroke-width="5">
+        <path d="M30 200 Q65 130 100 200 Z" fill="#f2efe6"/>
+        <path d="M110 200 Q145 130 180 200 Z" fill="#ffd400"/>
+        <path d="M190 200 Q225 130 260 200 Z" fill="#f2efe6"/>
+        <path d="M30 300 Q65 230 100 300 Z" fill="#f2efe6"/>
+        <path d="M110 300 Q145 230 180 300 Z" fill="#f2efe6"/>
+        <path d="M190 300 Q225 230 260 300 Z" fill="#ffd400"/>
+      </g>
+      <rect x="18" y="110" width="244" height="210" fill="none" stroke="#e10600" stroke-width="6" stroke-dasharray="14 8"/>
+      <text x="140" y="370" text-anchor="middle" font-family="'Courier New', monospace" font-weight="700" font-size="18" fill="#111">PARA CADA producto:</text>
+      <text x="140" y="398" text-anchor="middle" font-family="'Courier New', monospace" font-size="15" fill="#111">lo mismo, una y otra vez</text>
+    </g>
+
+    <!-- 3 ABSTRAER -->
+    <g transform="translate(630 20)">
+      <rect x="8" y="8" width="280" height="420" fill="#111"/>
+      <rect width="280" height="420" fill="#fff" stroke="#111" stroke-width="6"/>
+      <rect width="280" height="56" fill="#ffd400" stroke="#111" stroke-width="6"/>
+      <text x="16" y="40" font-size="26" fill="#111">3 · ABSTRAER</text>
+      <path d="M40 200 Q90 100 140 200 Z" fill="#f2efe6" stroke="#111" stroke-width="5"/>
+      <text x="90" y="190" text-anchor="middle" font-size="15" fill="#111">ARROZ</text>
+      <text x="90" y="230" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#111">color, marca,</text>
+      <text x="90" y="246" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#111">peso, olor…</text>
+      <path d="M150 165 H175" stroke="#111" stroke-width="6"/>
+      <path d="M170 152 L188 165 L170 178 Z" fill="#111"/>
+      <rect x="160" y="270" width="0" height="0"/>
+      <g transform="translate(140 270)">
+        <rect width="125" height="120" fill="#f2efe6" stroke="#111" stroke-width="5"/>
+        <g font-family="'Courier New', monospace" font-weight="700" font-size="16" fill="#111">
+          <text x="10" y="32">stock</text><text x="10" y="64">mínimo</text><text x="10" y="96">lote</text>
+        </g>
+      </g>
+      <path d="M200 185 V262" stroke="#111" stroke-width="6"/>
+      <path d="M187 255 L200 272 L213 255 Z" fill="#111"/>
+      <text x="20" y="300" font-family="'Courier New', monospace" font-weight="700" font-size="15" fill="#e10600">solo lo que</text>
+      <text x="20" y="320" font-family="'Courier New', monospace" font-weight="700" font-size="15" fill="#e10600">importa</text>
+    </g>
+
+    <!-- 4 ALGORITMO -->
+    <g transform="translate(935 20)">
+      <rect x="8" y="8" width="280" height="420" fill="#111"/>
+      <rect width="280" height="420" fill="#fff" stroke="#111" stroke-width="6"/>
+      <rect width="280" height="56" fill="#111" stroke="#111" stroke-width="6"/>
+      <text x="16" y="40" font-size="26" fill="#ffd400">4 · ALGORITMO</text>
+      <g font-family="'Courier New', monospace" font-weight="700" font-size="17" fill="#111">
+        <rect x="22" y="90" width="34" height="34" fill="#e10600"/><text x="32" y="114" fill="#f2efe6">1</text><text x="68" y="114">leer productos</text>
+        <rect x="22" y="150" width="34" height="34" fill="#e10600"/><text x="32" y="174" fill="#f2efe6">2</text><text x="68" y="174">para cada uno</text>
+        <rect x="22" y="210" width="34" height="34" fill="#e10600"/><text x="32" y="234" fill="#f2efe6">3</text><text x="68" y="234">¿stock&lt;mín?</text>
+        <rect x="22" y="270" width="34" height="34" fill="#e10600"/><text x="32" y="294" fill="#f2efe6">4</text><text x="68" y="294">anotar pedido</text>
+        <rect x="22" y="330" width="34" height="34" fill="#e10600"/><text x="32" y="354" fill="#f2efe6">5</text><text x="68" y="354">mostrar</text>
+      </g>
+      <text x="140" y="404" text-anchor="middle" font-family="'Courier New', monospace" font-size="15" fill="#111">pasos precisos, en orden</text>
+    </g>
+  </g>
+</svg>

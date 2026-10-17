@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 760" width="720" height="760">
+  <!-- La libreta del fiado y la balanza: la regla contra la persona -->
+  <defs>
+    <pattern id="renglones" width="10" height="44" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="43" x2="10" y2="43" stroke="#0033ff" stroke-width="1.5" opacity=".45"/>
+    </pattern>
+  </defs>
+
+  <!-- libreta -->
+  <g transform="rotate(-4 300 260)">
+    <rect x="70" y="40" width="440" height="420" fill="#111"/>
+    <rect x="55" y="25" width="440" height="420" fill="#fff" stroke="#111" stroke-width="7"/>
+    <rect x="55" y="25" width="440" height="420" fill="url(#renglones)"/>
+    <line x1="120" y1="25" x2="120" y2="445" stroke="#e10600" stroke-width="3"/>
+    <text x="140" y="80" font-family="'Arial Black', Impact, sans-serif" font-size="30" fill="#111">FIADOS</text>
+    <g font-family="'Segoe Print', 'Comic Sans MS', cursive" font-size="25" fill="#111">
+      <text x="135" y="155">Doña Juana</text><text x="390" y="155">35</text>
+      <text x="135" y="199">Don Pedro</text><text x="380" y="199">120</text>
+      <text x="135" y="243">la vecina</text><text x="390" y="243">60</text>
+      <text x="135" y="287">Sr. Choque</text><text x="390" y="287">15</text>
+    </g>
+    <path d="M440 135 l12 12 l26 -32" fill="none" stroke="#00a651" stroke-width="7"/>
+    <path d="M440 182 l30 26 M470 182 l-30 26" stroke="#e10600" stroke-width="7"/>
+    <text x="440" y="243" font-family="'Arial Black', Impact, sans-serif" font-size="30" fill="#0033ff">?</text>
+    <path d="M440 267 l12 12 l26 -32" fill="none" stroke="#00a651" stroke-width="7"/>
+  </g>
+
+  <!-- balanza -->
+  <g transform="translate(360 490)">
+    <rect x="-12" y="0" width="24" height="230" fill="#111"/>
+    <rect x="-90" y="220" width="180" height="26" fill="#111"/>
+    <g transform="rotate(-9)">
+      <rect x="-260" y="-6" width="520" height="14" fill="#111"/>
+      <line x1="-220" y1="4" x2="-220" y2="90" stroke="#111" stroke-width="5"/>
+      <line x1="220" y1="4" x2="220" y2="90" stroke="#111" stroke-width="5"/>
+    </g>
+    <!-- platillo izquierdo: la regla -->
+    <g transform="translate(-218 120)">
+      <path d="M-90 -10 H90 L60 30 H-60 Z" fill="#ffd400" stroke="#111" stroke-width="6"/>
+      <rect x="-70" y="-58" width="140" height="48" fill="#111"/>
+      <text x="0" y="-26" text-anchor="middle" font-family="'Courier New', monospace" font-weight="700" font-size="18" fill="#ffd400">deuda&lt;100</text>
+    </g>
+    <!-- platillo derecho: la persona -->
+    <g transform="translate(212 52)">
+      <path d="M-90 -10 H90 L60 30 H-60 Z" fill="#f2efe6" stroke="#111" stroke-width="6"/>
+      <circle cx="0" cy="-48" r="22" fill="#e10600" stroke="#111" stroke-width="5"/>
+      <path d="M-30 -10 Q0 -40 30 -10 Z" fill="#e10600" stroke="#111" stroke-width="5"/>
+    </g>
+    <text x="-218" y="200" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="22" fill="#111">LA REGLA</text>
+    <text x="212" y="130" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="22" fill="#111">LA PERSONA</text>
+  </g>
+</svg>

@@ -152,6 +152,51 @@ td, th { border: 1px solid $tinta !important; }
   ul { margin-bottom: 0; }
 }
 
+// ---------- Color de acento por capítulo ----------
+// ::: {.estilo-capitulo acento="azul"} define --acento para ese capítulo
+:root { --acento: #{$rojo}; }
+h2 .header-section-number, h3 .header-section-number { color: var(--acento); }
+.grito { color: var(--acento); }
+.manifiesto { border-left-color: var(--acento); }
+
+// Banda o imagen de apertura del capítulo
+.apertura-capitulo {
+  height: 46px; margin: 0 0 1.5em;
+  border: 3px solid $tinta;
+  background: repeating-linear-gradient(-45deg, var(--acento) 0 6px, transparent 6px 14px);
+  img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  &:has(img) { height: auto; aspect-ratio: 16 / 6.5; background: none; }
+  &.motivo-puntos { background: radial-gradient(var(--acento) 30%, transparent 32%) 0 0 / 12px 12px; }
+  &.motivo-cuadricula { background:
+      linear-gradient(var(--acento) 1px, transparent 1px) 0 0 / 14px 14px,
+      linear-gradient(90deg, var(--acento) 1px, transparent 1px) 0 0 / 14px 14px; }
+}
+
+// ---------- Figuras que el texto rodea ----------
+// ::: {.figura-izq ancho="40%"}  imagen + texto  :::
+.figura-izq, .figura-der { display: flow-root; margin: 1.5em 0; }
+.figura-izq > .quarto-float, .figura-izq > .quarto-figure, .figura-izq > figure {
+  float: left; width: var(--ancho, 42%); margin: 0 1.6em 1em 0;
+}
+.figura-der > .quarto-float, .figura-der > .quarto-figure, .figura-der > figure {
+  float: right; width: var(--ancho, 42%); margin: 0 0 1em 1.6em;
+}
+.figura-pie { margin: 1.5em 0; }
+.figura-pie > .quarto-float, .figura-pie > .quarto-figure, .figura-pie > figure { width: var(--ancho, 60%); }
+.figura-izq img, .figura-der img, .figura-pie img, .quarto-figure img {
+  border: 3px solid $tinta; box-shadow: 6px 6px 0 $tinta; background: $papel;
+}
+.figure-caption, figcaption {
+  font-family: $font-family-monospace; font-size: .78rem; margin-top: .8em;
+}
+@media (max-width: 640px) {
+  .figura-izq > .quarto-float, .figura-der > .quarto-float,
+  .figura-izq > .quarto-figure, .figura-der > .quarto-figure { float: none; width: 100%; margin: 0 0 1em; }
+}
+
+// Diagramas mermaid sobre papel
+.cell-output-display svg, .mermaid svg { max-width: 100%; }
+
 // Portadas de parte: página-cartel
 .parte-cartel {
   background: $tinta; color: $papel;

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="800" height="1200">
-  <!-- Portada provisional brutalista/dadaísta. Reemplázala por tu propio collage (PNG/JPG) cuando lo tengas. -->
-  <rect width="800" height="1200" fill="#f2efe6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1130" width="800" height="1130">
+  <!-- Portada provisional brutalista/dadaísta. Proporción 17 × 24 (800 × 1130). Reemplázala por tu collage en PNG de 1700 × 2400. -->
+  <rect width="800" height="1130" fill="#f2efe6"/>
 
   <!-- bloques de color tipo afiche -->
   <rect x="0" y="0" width="800" height="300" fill="#111"/>
@@ -13,8 +13,8 @@
     <text x="40" y="360">if (orden) { entropia++; }</text>
     <text x="70" y="390">// TODO: arreglar después</text>
     <text x="40" y="420">git commit -m "ahora sí"</text>
-    <text x="300" y="980">H = -Σ p(x) log p(x)</text>
-    <text x="330" y="1010">loss = cross_entropy(y, ŷ)</text>
+    <text x="300" y="925">H = -Σ p(x) log p(x)</text>
+    <text x="330" y="955">loss = cross_entropy(y, ŷ)</text>
   </g>
 
   <!-- título como recortes pegados -->
@@ -34,9 +34,9 @@
 
   <!-- subtítulo mecanografiado -->
   <g font-family="'Courier New', monospace" font-size="26" font-weight="700" fill="#111">
-    <text x="40" y="1080">LA EVOLUCIÓN DEL DESARROLLO DE SOFTWARE</text>
-    <text x="40" y="1115">FRENTE AL OJO DE LA IA</text>
+    <text x="40" y="1010">LA EVOLUCIÓN DEL DESARROLLO DE SOFTWARE</text>
+    <text x="40" y="1045">FRENTE AL OJO DE LA IA</text>
   </g>
-  <rect x="40" y="1135" width="720" height="8" fill="#111"/>
-  <text x="40" y="1175" font-family="'Arial Black', sans-serif" font-size="24" fill="#e10600">DIEGO TORREZ — BOLIVIA</text>
+  <rect x="40" y="1065" width="720" height="8" fill="#111"/>
+  <text x="40" y="1105" font-family="'Arial Black', sans-serif" font-size="24" fill="#e10600">DIEGO TORREZ — BOLIVIA</text>
 </svg>

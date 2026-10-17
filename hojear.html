@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hojear · Código Entrópico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+<style>
+  :root {
+    --papel: #f2efe6; --tinta: #111; --rojo: #e10600; --amarillo: #ffd400; --azul: #0033ff;
+    --mesa: #1b1b1b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--mesa);
+    background-image:
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 28px 28px;
+    color: var(--papel);
+    font-family: "Space Mono", ui-monospace, monospace;
+    display: flex; flex-direction: column;
+  }
+  header {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px;
+    padding: 10px 16px; background: var(--tinta); border-bottom: 4px solid var(--rojo);
+  }
+  header h1 {
+    margin: 0; font-family: "Archivo Black", sans-serif; font-size: 18px;
+    text-transform: uppercase; letter-spacing: -.01em;
+  }
+  header h1 span { background: var(--amarillo); color: var(--tinta); padding: 0 6px; margin-left: 6px; }
+  .controles { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-left: auto; }
+  button, .boton, input {
+    font: 700 12px "Space Mono", monospace; text-transform: uppercase;
+    background: var(--papel); color: var(--tinta); border: 2px solid var(--papel);
+    padding: 6px 10px; cursor: pointer; text-decoration: none; box-shadow: 3px 3px 0 var(--rojo);
+  }
+  button:hover, .boton:hover { background: var(--amarillo); border-color: var(--amarillo); }
+  button:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--rojo); }
+  input { width: 64px; text-align: center; box-shadow: none; cursor: text; }
+  #indicador { min-width: 120px; text-align: center; font-size: 12px; }
+  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px 16px; min-height: 0; }
+  #libro { margin: 0 auto; }
+  #libro .page { background: #fff; }
+  #libro .page img { width: 100%; height: 100%; display: block; object-fit: contain; }
+  #libro .page img:not([src]) { visibility: hidden; }
+  #progreso { position: fixed; left: 0; bottom: 0; height: 4px; width: 100%; }
+  #progreso div { height: 100%; width: 0; background: var(--amarillo); transition: width .2s; }
+  #carga { text-align: center; max-width: 420px; width: 100%; }
+  #carga p { margin: 0 0 10px; }
+  .barra { height: 14px; border: 2px solid var(--papel); }
+  .barra div { height: 100%; width: 0; background: var(--rojo); transition: width .15s; }
+  #error { display: none; max-width: 560px; background: var(--papel); color: var(--tinta); padding: 18px 20px;
+           border-left: 10px solid var(--rojo); box-shadow: 6px 6px 0 #000; }
+  #error code { background: var(--tinta); color: var(--amarillo); padding: 1px 5px; }
+  #lupa { position: fixed; inset: 0; background: rgba(0,0,0,.9); display: none; overflow: auto; z-index: 10; cursor: zoom-out; }
+  #lupa img { display: block; margin: 20px auto; max-width: min(1000px, 96vw); box-shadow: 0 0 0 4px var(--papel); }
+  footer { padding: 8px 16px; font-size: 11px; opacity: .65; text-align: center; }
+  @media (max-width: 640px) { header h1 { font-size: 15px; } .controles { margin-left: 0; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Código Entrópico<span>hojear</span></h1>
+  <div class="controles">
+    <button id="anterior" title="Página anterior (←)">◀</button>
+    <span id="indicador">—</span>
+    <button id="siguiente" title="Página siguiente (→)">▶</button>
+    <input id="ir" type="number" min="1" placeholder="pág." title="Ir a la hoja">
+    <button id="lupa-btn" title="Ver la página en grande">Lupa</button>
+    <a class="boton" id="descargar" href="codigo-entropico.pdf" download>PDF</a>
+    <a class="boton" href="index.html">Web</a>
+  </div>
+</header>
+<main>
+  <div id="carga">
+    <p id="carga-texto">Imprimiendo las páginas…</p>
+    <div class="barra"><div id="carga-barra"></div></div>
+  </div>
+  <div id="error">
+    <strong>No encontré el PDF del libro.</strong>
+    <p>Primero genera la versión impresa con <code>quarto render --to typst</code> y abre esta página desde
+    la vista previa (<code>quarto preview</code>), no como archivo suelto.</p>
+  </div>
+  <div id="libro" hidden></div>
+</main>
+<footer>Usa las flechas del teclado o arrastra la esquina de la hoja · Versión de prueba de impresión 17 × 24 cm</footer>
+<div id="lupa"><img alt="Página ampliada"></div>
+<div id="progreso" title="Páginas impresas"><div id="progreso-barra"></div></div>
+
+<script>
+(async function () {
+  const PDF = "codigo-entropico.pdf";
+  const $ = (id) => document.getElementById(id);
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+  let pdf;
+  try {
+    pdf = await pdfjsLib.getDocument(PDF + "?v=" + Date.now()).promise;
+  } catch (e) {
+    $("carga").style.display = "none";
+    $("error").style.display = "block";
+    return;
+  }
+
+  const total = pdf.numPages;
+  const primera = await pdf.getPage(1);
+  const vista1 = primera.getViewport({ scale: 1 });
+  const proporcion = vista1.height / vista1.width;
+  const alturaDisponible = Math.max(360, window.innerHeight - 170);
+  const alto = Math.min(900, alturaDisponible);
+  const ancho = Math.round(alto / proporcion);
+  // Resolución justa para la pantalla (nítida sin ser lenta)
+  const escala = (alto * Math.min(window.devicePixelRatio || 1, 2)) / vista1.height;
+
+  // Una hoja vacía por página; se "imprime" solo cuando hace falta
+  const contenedor = $("libro");
+  const hojas = [];
+  for (let i = 1; i <= total; i++) {
+    const hoja = document.createElement("div");
+    hoja.className = "page";
+    hoja.dataset.density = (i === 1 || i === total) ? "hard" : "soft";
+    const img = document.createElement("img");
+    img.alt = "Página " + i;
+    hoja.appendChild(img);
+    contenedor.appendChild(hoja);
+    hojas.push(img);
+  }
+  const listas = new Set();
+  const cola = [];
+  let trabajando = false;
+  function pedir(nums) {
+    for (const n of [...nums].reverse()) {
+      if (n < 1 || n > total || listas.has(n)) continue;
+      const k = cola.indexOf(n); if (k >= 0) cola.splice(k, 1);
+      cola.unshift(n);
+    }
+    procesar();
+  }
+  async function procesar() {
+    if (trabajando) return;
+    trabajando = true;
+    while (cola.length) {
+      const n = cola.shift();
+      if (listas.has(n)) continue;
+      const pagina = n === 1 ? primera : await pdf.getPage(n);
+      const vista = pagina.getViewport({ scale: escala });
+      const lienzo = document.createElement("canvas");
+      lienzo.width = Math.floor(vista.width);
+      lienzo.height = Math.floor(vista.height);
+      await pagina.render({ canvasContext: lienzo.getContext("2d"), viewport: vista }).promise;
+      hojas[n - 1].src = lienzo.toDataURL("image/jpeg", 0.9);
+      listas.add(n);
+      $("progreso-barra").style.width = Math.round((listas.size / total) * 100) + "%";
+    }
+    trabajando = false;
+  }
+
+  $("carga").style.display = "none";
+  contenedor.hidden = false;
+
+  const libro = new St.PageFlip(contenedor, {
+    width: ancho, height: alto,
+    size: "fixed",
+    showCover: true,
+    usePortrait: true,
+    maxShadowOpacity: 0.55,
+    mobileScrollSupport: false,
+    flippingTime: 700,
+  });
+  libro.loadFromHTML(contenedor.querySelectorAll(".page"));
+  const imagenes = { get length() { return total; } };
+  pedir([1, 2, 3, 4, 5]);
+  libro.on("flip", (e) => {
+    const i = e.data + 1;
+    pedir([i - 1, i, i + 1, i + 2, i + 3, i + 4]);
+  });
+  // En segundo plano, el resto del libro
+  setTimeout(() => { for (let n = 1; n <= total; n++) if (!listas.has(n)) cola.push(n); procesar(); }, 1500);
+
+  function actualizar() {
+    const i = libro.getCurrentPageIndex();
+    const enDoble = libro.getOrientation() === "landscape" && i > 0 && i < total - 1;
+    $("indicador").textContent = enDoble
+      ? "hojas " + (i + 1) + "–" + Math.min(i + 2, total) + " / " + total
+      : "hoja " + (i + 1) + " / " + total;
+  }
+  libro.on("flip", actualizar);
+  libro.on("changeOrientation", actualizar);
+  actualizar();
+
+  $("anterior").onclick = () => libro.flipPrev();
+  $("siguiente").onclick = () => libro.flipNext();
+  $("ir").addEventListener("change", (e) => {
+    const n = Math.max(1, Math.min(total, parseInt(e.target.value, 10) || 1));
+    pedir([n - 1, n, n + 1, n + 2]);
+    libro.flip(n - 1);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.target.tagName === "INPUT") return;
+    if (e.key === "ArrowRight") libro.flipNext();
+    if (e.key === "ArrowLeft") libro.flipPrev();
+    if (e.key === "Escape") $("lupa").style.display = "none";
+  });
+
+  $("lupa-btn").onclick = async () => {
+    // La lupa imprime la página a alta resolución
+    const n = libro.getCurrentPageIndex() + 1;
+    const pagina = await pdf.getPage(n);
+    const vista = pagina.getViewport({ scale: 2.5 });
+    const lienzo = document.createElement("canvas");
+    lienzo.width = Math.floor(vista.width);
+    lienzo.height = Math.floor(vista.height);
+    await pagina.render({ canvasContext: lienzo.getContext("2d"), viewport: vista }).promise;
+    $("lupa").querySelector("img").src = lienzo.toDataURL("image/jpeg", 0.92);
+    $("lupa").style.display = "block";
+  };
+  $("lupa").onclick = () => { $("lupa").style.display = "none"; };
+})();
+</script>
+</body>
+</html>

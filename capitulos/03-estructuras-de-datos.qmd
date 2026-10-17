@@ -1,3 +1,4 @@
+
 ---
 title: "Estructuras de datos: arreglos, listas, pilas, colas, árboles, grafos y tablas hash"
 estado: pendiente   # pendiente | borrador | revision | listo

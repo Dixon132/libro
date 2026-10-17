@@ -1,0 +1,22 @@
+# Introducción: ¿Para qué aprender a programar si la IA ya programa? {.unnumbered}
+
+::: {.estilo-capitulo acento="amarillo" motivo="ruido"}
+:::
+
+::: {.callout-note collapse="true"}
+## Plan de la introducción (guía de escritura)
+**Estado:** esqueleto. Se escribe después del capítulo 1.
+
+La introducción responde la pregunta que cualquier estudiante se hace hoy, y que la mayoría de los libros evita: **si una IA ya escribe código, ¿para qué aprender?** La respuesta del libro tiene que convencer sin negar lo que la IA hace bien.
+
+Recorrido sugerido, cada parte como una escena del mercado:
+
+1. **La escena:** Marco le pide a la IA "hazme el sistema del puesto" y recibe 300 líneas que funcionan… hasta el primer sábado de fin de mes.
+2. **El argumento central:** la IA reduce el costo de **escribir** código, no el costo de **decidir** qué debe hacer, ni el de **mantenerlo** en orden. Esa es la entropía que este libro enseña a contener (enlazar con @brooks1987 y @lehman1980).
+3. **Lo que cambia y lo que no:** una tabla de dos columnas, "lo que la IA ya hace" contra "lo que sigue siendo tu oficio" (entender, abstraer, verificar, responder por el sistema).
+4. **El Inge habla:** una pizarra con la tesis del libro en tres líneas.
+5. **Cómo leer este libro:** el recorrido por las cuatro partes, el mercado como mapa, Caserita como proyecto que crece y el Ciclo Entrópico en cada capítulo.
+6. **Desde dónde:** por qué escribirlo desde Bolivia y en español.
+:::
+
+_Por escribir._

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 820" width="700" height="820">
+  <!-- El Inge: retrato collage con tarjeta perforada -->
+  <defs>
+    <pattern id="trama" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.6" fill="#111"/>
+    </pattern>
+  </defs>
+
+  <!-- tarjeta perforada detrás -->
+  <g transform="rotate(-9 350 330)">
+    <rect x="70" y="120" width="560" height="300" fill="#ffd400" stroke="#111" stroke-width="7"/>
+    <path d="M70 120 L110 120 L70 160 Z" fill="#f2efe6" stroke="#111" stroke-width="5"/>
+    <g fill="#111">
+      <rect x="130" y="160" width="10" height="22"/><rect x="170" y="200" width="10" height="22"/><rect x="210" y="160" width="10" height="22"/>
+      <rect x="250" y="250" width="10" height="22"/><rect x="290" y="200" width="10" height="22"/><rect x="330" y="300" width="10" height="22"/>
+      <rect x="370" y="160" width="10" height="22"/><rect x="410" y="250" width="10" height="22"/><rect x="450" y="340" width="10" height="22"/>
+      <rect x="490" y="200" width="10" height="22"/><rect x="530" y="300" width="10" height="22"/><rect x="570" y="160" width="10" height="22"/>
+      <rect x="150" y="340" width="10" height="22"/><rect x="230" y="300" width="10" height="22"/><rect x="390" y="370" width="10" height="22"/>
+    </g>
+    <text x="130" y="408" font-family="'Courier New', monospace" font-size="20" font-weight="700" fill="#111">IBM 5081 · 1976</text>
+  </g>
+
+  <!-- cabeza -->
+  <circle cx="350" cy="470" r="185" fill="#111"/>
+  <circle cx="338" cy="456" r="185" fill="#f2efe6" stroke="#111" stroke-width="8"/>
+  <circle cx="338" cy="456" r="185" fill="url(#trama)" opacity=".18"/>
+
+  <!-- casco -->
+  <path d="M160 400 Q170 250 338 245 Q506 250 516 400 Z" fill="#e10600" stroke="#111" stroke-width="8"/>
+  <rect x="130" y="392" width="416" height="32" fill="#e10600" stroke="#111" stroke-width="8"/>
+  <rect x="318" y="250" width="40" height="145" fill="#111" opacity=".85"/>
+
+  <!-- lentes -->
+  <g fill="#f2efe6" stroke="#111" stroke-width="10">
+    <circle cx="270" cy="490" r="52"/>
+    <circle cx="410" cy="490" r="52"/>
+  </g>
+  <line x1="322" y1="490" x2="358" y2="490" stroke="#111" stroke-width="10"/>
+  <circle cx="282" cy="495" r="14" fill="#111"/>
+  <circle cx="420" cy="495" r="14" fill="#111"/>
+
+  <!-- bigote -->
+  <path d="M250 590 Q300 560 340 585 Q380 560 430 590 Q390 615 340 600 Q290 615 250 590 Z" fill="#111"/>
+
+  <!-- tiza en la oreja -->
+  <rect x="505" y="455" width="70" height="18" fill="#f2efe6" stroke="#111" stroke-width="5" transform="rotate(-25 540 464)"/>
+
+  <!-- etiqueta -->
+  <g transform="rotate(3 350 740)">
+    <rect x="110" y="700" width="490" height="70" fill="#111"/>
+    <rect x="98" y="690" width="490" height="70" fill="#0033ff"/>
+    <text x="343" y="737" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="32" fill="#f2efe6">EL INGE</text>
+    <text x="343" y="756" text-anchor="middle" font-family="'Courier New', monospace" font-weight="700" font-size="14" fill="#ffd400">50 AÑOS DE OFICIO</text>
+  </g>
+</svg>
