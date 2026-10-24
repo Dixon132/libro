@@ -1,0 +1,60 @@
+---
+title: "Diseñar para durar: código limpio, objetos, patrones, datos y arquitectura"
+estado: pendiente   # pendiente | borrador | revision | listo
+---
+
+::: {.callout-note collapse="true"}
+## Ficha del capítulo
+- **Objetivo de aprendizaje:** _(por definir)_
+- **Prerrequisitos:** _(por definir)_
+- **Proyecto guía:** _(qué pieza de Caserita se construye aquí)_
+- **Temas que integra** (del plan original de 47 capítulos):
+  - Programación orientada a objetos: clases, herencia, polimorfismo y encapsulamiento
+  - Otros paradigmas: programación funcional, asíncrona y reactiva
+  - Código limpio: nombres, funciones, principios SOLID, DRY y KISS
+  - Patrones de diseño: creacionales, estructurales y de comportamiento
+  - Bases de datos: modelado relacional, SQL, normalización, NoSQL y ORMs
+  - Arquitectura de software: capas, MVC, hexagonal, monolito y microservicios
+  - Estructura de proyectos: organización de carpetas, configuración, variables de entorno y monorepos
+  - APIs: REST, GraphQL, autenticación, autorización y documentación
+  - Frontend moderno: fundamentos web, frameworks y consumo de APIs
+:::
+
+## Orden {#sec-c03-orden}
+
+_Por escribir._ Presenta el problema real en el mercado y la solución de referencia.
+
+## Entropía {#sec-c03-entropia}
+
+_Por escribir._ ¿Qué lo degrada con el tiempo, el equipo y la escala?
+
+## Análisis {#sec-c03-analisis}
+
+_Por escribir._ Contenido técnico a fondo, con alternativas, ejemplos y código.
+
+## Contención {#sec-c03-contencion}
+
+_Por escribir._ Prácticas y pruebas que frenan el desorden.
+
+::: {.callout-important}
+## Reto
+_Por definir._
+:::
+
+## Ojo de la IA {#sec-c03-ia}
+
+::: {.callout-tip icon="false"}
+## Ojo de la IA
+_Por escribir._ Ventana breve: cómo una IA leería, generaría o rompería este tema.
+:::
+
+## Custodia {#sec-c03-custodia}
+
+::: {.callout-warning icon="false"}
+## Custodia
+_Por escribir._ Quién responde por lo construido y qué hay que proteger.
+:::
+
+## Para cerrar
+
+_Por escribir._

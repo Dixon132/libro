@@ -66,6 +66,8 @@
 
 ## Registro
 
+- **2026-10-23** — Etapa 2. Alcance reducido a **12 capítulos** que fusionan los 47 temas (plan original en `_reserva/plan-47-capitulos/`). Nueva numeración: Git = cap. 4, Comunicarse = cap. 7, Bolivia = cap. 11. Portada nueva: el cuaderno de Doña Rosa. Borradores completos de los caps. 2 (Caserita 0.2: dict de productos, registrar_venta, puede_fiar en centavos), 7 (ficha de pedido de 7 partes, reporte_semanal) y 11 (soberanía de datos, seudonimización). Bibliografía: 24 fuentes. Pendientes: [VERIFICAR] en cap. 11 (egresados, brecha urbano/rural, estado de la ley de datos), APA en la web (falta apa.csl), informe de avance y presentación.
+
 - **2026-10-10** — Versión impresa (Typst, 17 × 24 cm) con plantilla propia, filtros Lua, visor `hojear.html` y `construir.ps1`. Cap. 1 reescrito y ampliado: Knuth, tres puertas de la ambigüedad, entropía medida en bits, cuatro pasadas del pseudocódigo, errores típicos, ejercicios por niveles, glosario, 6 ilustraciones SVG, apertura con imagen y Código 1.1. Creado `introduccion.qmd` (esqueleto). Referencia `knuth1997`. Citas en APA en el PDF.
 - **2026-10-09** — Se quitó el Tilcayo; el epílogo se replanteó como cierre del Ciclo Entrópico.
 - **2026-10-09** — Quarto instalado. Primer borrador del cap. 1.

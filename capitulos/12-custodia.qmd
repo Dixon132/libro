@@ -1,0 +1,56 @@
+---
+title: "Custodia: lenguas, ambiente, ética, regulación y tecnología para lo nuestro"
+estado: pendiente   # pendiente | borrador | revision | listo
+---
+
+::: {.callout-note collapse="true"}
+## Ficha del capítulo
+- **Objetivo de aprendizaje:** _(por definir)_
+- **Prerrequisitos:** _(por definir)_
+- **Proyecto guía:** _(qué pieza de Caserita se construye aquí)_
+- **Temas que integra** (del plan original de 47 capítulos):
+  - La IA y nuestras lenguas: aymara, quechua, guaraní y la diversidad que los modelos ignoran
+  - El costo ambiental de la IA y los bosques que queremos proteger
+  - Ética y responsabilidad del desarrollador
+  - Regulación: marcos internacionales y el camino de Bolivia
+  - Tecnología para lo nuestro: software para conservación, salud y educación local
+:::
+
+## Orden {#sec-c12-orden}
+
+_Por escribir._ El orden social de partida: datos e historia de la región.
+
+## Entropía {#sec-c12-entropia}
+
+_Por escribir._ Qué desequilibra ese orden: brechas, extracción, exclusión.
+
+## Análisis {#sec-c12-analisis}
+
+_Por escribir._ Evidencia: cifras, casos y comparación regional.
+
+## Contención {#sec-c12-contencion}
+
+_Por escribir._ Iniciativas y prácticas que reducen la brecha o el daño.
+
+::: {.callout-important}
+## Reto
+_Por definir._
+:::
+
+## Ojo de la IA {#sec-c12-ia}
+
+::: {.callout-tip icon="false"}
+## Ojo de la IA
+_Por escribir._ Qué ve el modelo y qué ignora sobre este tema.
+:::
+
+## Custodia {#sec-c12-custodia}
+
+::: {.callout-warning icon="false"}
+## Custodia
+_Por escribir._ Qué nos toca proteger y construir desde Bolivia.
+:::
+
+## Para cerrar
+
+_Por escribir._

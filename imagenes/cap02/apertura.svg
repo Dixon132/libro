@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 650" width="1600" height="650">
+  <!-- Apertura cap. 2: el cuaderno se vuelve pantalla. -->
+  <defs>
+    <pattern id="cuad" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="#0033ff" stroke-width="2" opacity=".25"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="650" fill="#f2efe6"/>
+  <rect width="1600" height="650" fill="url(#cuad)"/>
+
+  <!-- cuaderno azul abierto, a la izquierda -->
+  <g transform="translate(110 150) rotate(-6)">
+    <rect x="14" y="14" width="520" height="360" fill="#111"/>
+    <rect width="520" height="360" fill="#fbf8ee" stroke="#111" stroke-width="8"/>
+    <line x1="260" y1="0" x2="260" y2="360" stroke="#111" stroke-width="6"/>
+    <g font-family="'Segoe Print', 'Ink Free', cursive" font-size="28" fill="#1c3f9e">
+      <text x="30" y="70">PARA CADA</text>
+      <text x="30" y="115">producto…</text>
+      <text x="50" y="160">SI stock &lt;</text>
+      <text x="50" y="205">minimo…</text>
+      <text x="290" y="70">arroz 25</text>
+      <text x="290" y="115">aceite 12</text>
+    </g>
+  </g>
+
+  <!-- flecha de traducción -->
+  <g transform="translate(700 330)">
+    <rect x="-10" y="-34" width="200" height="68" fill="#ffd400" stroke="#111" stroke-width="7"/>
+    <path d="M190 -60 L270 0 L190 60 Z" fill="#ffd400" stroke="#111" stroke-width="7"/>
+    <text x="80" y="12" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="34" fill="#111">PYTHON</text>
+  </g>
+
+  <!-- pantalla a la derecha -->
+  <g transform="translate(1010 110) rotate(3)">
+    <rect x="16" y="16" width="500" height="340" fill="#0033ff"/>
+    <rect width="500" height="340" fill="#111" stroke="#111" stroke-width="8"/>
+    <g font-family="'Courier New', monospace" font-weight="700" font-size="26">
+      <text x="28" y="60" fill="#ffd400">for</text><text x="88" y="60" fill="#f2efe6">p in productos:</text>
+      <text x="58" y="104" fill="#ffd400">if</text><text x="102" y="104" fill="#f2efe6">p["stock"] &lt;</text>
+      <text x="88" y="148" fill="#f2efe6">p["minimo"]:</text>
+      <text x="88" y="192" fill="#f2efe6">pedido.append(…)</text>
+      <text x="28" y="270" fill="#00a651">&gt;&gt;&gt; hola, casera_</text>
+    </g>
+    <rect x="200" y="340" width="100" height="70" fill="#111"/>
+    <rect x="130" y="404" width="240" height="22" fill="#111"/>
+  </g>
+
+  <!-- número de capítulo collage -->
+  <g transform="translate(1380 560) rotate(-8)">
+    <rect x="-90" y="-62" width="180" height="96" fill="#e10600" stroke="#111" stroke-width="7"/>
+    <text y="18" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="64" fill="#f2efe6">v0.2</text>
+  </g>
+</svg>

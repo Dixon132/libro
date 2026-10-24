@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560">
+  <!-- Variables como frascos etiquetados en el estante del puesto -->
+  <rect width="900" height="560" fill="#f2efe6"/>
+  <g transform="rotate(-2 450 55)">
+    <rect x="40" y="22" width="820" height="66" fill="#111"/>
+    <text x="450" y="68" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="36" fill="#ffd400">UNA VARIABLE = UN FRASCO CON ETIQUETA</text>
+  </g>
+  <!-- estante -->
+  <rect x="40" y="430" width="820" height="26" fill="#111"/>
+  <g font-family="'Courier New', monospace" font-weight="700" text-anchor="middle">
+    <!-- frasco 1: int -->
+    <g transform="translate(150 200)">
+      <rect x="-80" y="-20" width="160" height="34" fill="#111"/>
+      <rect x="-90" y="14" width="180" height="216" fill="#fff" stroke="#111" stroke-width="7"/>
+      <rect x="-70" y="60" width="140" height="56" fill="#ffd400" stroke="#111" stroke-width="5"/>
+      <text y="96" font-size="24" fill="#111">stock</text>
+      <text y="190" font-size="54" fill="#111">4</text>
+      <text y="270" font-size="22" fill="#0033ff">int</text>
+    </g>
+    <!-- frasco 2: float -->
+    <g transform="translate(360 200)">
+      <rect x="-80" y="-20" width="160" height="34" fill="#111"/>
+      <rect x="-90" y="14" width="180" height="216" fill="#fff" stroke="#111" stroke-width="7"/>
+      <rect x="-70" y="60" width="140" height="56" fill="#ffd400" stroke="#111" stroke-width="5"/>
+      <text y="96" font-size="24" fill="#111">peso_kg</text>
+      <text y="190" font-size="50" fill="#111">2.5</text>
+      <text y="270" font-size="22" fill="#0033ff">float</text>
+    </g>
+    <!-- frasco 3: str -->
+    <g transform="translate(570 200)">
+      <rect x="-80" y="-20" width="160" height="34" fill="#111"/>
+      <rect x="-90" y="14" width="180" height="216" fill="#fff" stroke="#111" stroke-width="7"/>
+      <rect x="-70" y="60" width="140" height="56" fill="#ffd400" stroke="#111" stroke-width="5"/>
+      <text y="96" font-size="24" fill="#111">nombre</text>
+      <text y="186" font-size="34" fill="#111">"arroz"</text>
+      <text y="270" font-size="22" fill="#0033ff">str</text>
+    </g>
+    <!-- frasco 4: bool -->
+    <g transform="translate(775 200)">
+      <rect x="-70" y="-20" width="140" height="34" fill="#111"/>
+      <rect x="-80" y="14" width="160" height="216" fill="#fff" stroke="#111" stroke-width="7"/>
+      <rect x="-64" y="60" width="128" height="56" fill="#ffd400" stroke="#111" stroke-width="5"/>
+      <text y="96" font-size="20" fill="#111">fin_mes</text>
+      <text y="186" font-size="34" fill="#e10600">True</text>
+      <text y="270" font-size="22" fill="#0033ff">bool</text>
+    </g>
+  </g>
+  <text x="450" y="520" text-anchor="middle" font-family="'Courier New', monospace" font-weight="700" font-size="22" fill="#111">la etiqueta es el nombre · lo de adentro es el valor · el vidrio es el tipo</text>
+</svg>

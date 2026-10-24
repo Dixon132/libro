@@ -1,0 +1,53 @@
+---
+title: "Cómo piensa (y se equivoca) un modelo de lenguaje: tokens, contexto y herramientas"
+estado: pendiente   # pendiente | borrador | revision | listo
+---
+
+::: {.callout-note collapse="true"}
+## Ficha del capítulo
+- **Objetivo de aprendizaje:** _(por definir)_
+- **Prerrequisitos:** _(por definir)_
+- **Proyecto guía:** _(qué pieza de Caserita se construye aquí)_
+- **Temas que integra** (del plan original de 47 capítulos):
+  - Cómo funciona un modelo de lenguaje: tokens, contexto y alucinaciones
+  - El ecosistema de herramientas: chat, asistentes en el editor y agentes de código
+:::
+
+## Orden {#sec-c06-orden}
+
+_Por escribir._ El flujo de trabajo antes de la IA.
+
+## Entropía {#sec-c06-entropia}
+
+_Por escribir._ Qué desorden introduce la IA (código no leído, falsa confianza).
+
+## Análisis {#sec-c06-analisis}
+
+_Por escribir._ Técnicas para trabajar con la herramienta; comparación de enfoques.
+
+## Contención {#sec-c06-contencion}
+
+_Por escribir._ Prácticas de verificación con IA.
+
+::: {.callout-important}
+## Reto
+_Por definir._
+:::
+
+## Ojo de la IA {#sec-c06-ia}
+
+::: {.callout-tip icon="false"}
+## Ojo de la IA
+_Por escribir._ Centro del capítulo: dónde ayuda y dónde se equivoca, con ejemplos reales.
+:::
+
+## Custodia {#sec-c06-custodia}
+
+::: {.callout-warning icon="false"}
+## Custodia
+_Por escribir._ Quién responde por lo generado y **cuándo no delegar**.
+:::
+
+## Para cerrar
+
+_Por escribir._

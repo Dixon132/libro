@@ -1,42 +1,188 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1130" width="800" height="1130">
-  <!-- Portada provisional brutalista/dadaísta. Proporción 17 × 24 (800 × 1130). Reemplázala por tu collage en PNG de 1700 × 2400. -->
-  <rect width="800" height="1130" fill="#f2efe6"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 1130" width="800" height="1130">
+  <!--
+    Portada — "El cuaderno de Doña Rosa". Proporción 17 × 24.
+    Lectura de arriba abajo = el Ciclo Entrópico: la etiqueta ordenada (orden),
+    la rotura (entropía), la lista que se vuelve código y luego ruido (análisis → desorden),
+    el ojo que mira desde adentro (ojo de la IA) y el sello del Inge (custodia).
+  -->
+  <defs>
+    <!-- textura de cartón de las tapas -->
+    <filter id="carton" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="7" result="ruido"/>
+      <feColorMatrix in="ruido" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.22 0" result="grano"/>
+      <feComposite in="grano" in2="SourceGraphic" operator="in" result="granoDentro"/>
+      <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="granoDentro"/></feMerge>
+    </filter>
+    <!-- borde rasgado -->
+    <filter id="rasgado" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="3" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="14" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="rasgadoFino" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="2" seed="11" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <!-- sello de goma: tinta irregular -->
+    <filter id="sello" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="1" seed="5" result="t"/>
+      <feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 1.5" result="huecos"/>
+      <feComposite in="SourceGraphic" in2="huecos" operator="in"/>
+    </filter>
+    <filter id="sombra" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="5" dy="7" stdDeviation="3" flood-color="#000" flood-opacity=".35"/>
+    </filter>
 
-  <!-- bloques de color tipo afiche -->
-  <rect x="0" y="0" width="800" height="300" fill="#111"/>
-  <rect x="520" y="250" width="320" height="420" fill="#e10600" transform="rotate(8 680 460)"/>
-  <rect x="-40" y="760" width="460" height="120" fill="#ffd400" transform="rotate(-6 190 820)"/>
-  <circle cx="160" cy="560" r="120" fill="none" stroke="#0033ff" stroke-width="22"/>
+    <linearGradient id="tapa" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2556c4"/>
+      <stop offset=".55" stop-color="#1c46a6"/>
+      <stop offset="1" stop-color="#14337c"/>
+    </linearGradient>
+    <radialGradient id="iris" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#111"/>
+      <stop offset=".34" stop-color="#111"/>
+      <stop offset=".36" stop-color="#e10600"/>
+      <stop offset=".62" stop-color="#ff6b00"/>
+      <stop offset=".9" stop-color="#ffd400"/>
+      <stop offset="1" stop-color="#111"/>
+    </radialGradient>
 
-  <!-- rejilla de código como ruido -->
-  <g font-family="'Courier New', monospace" font-size="18" fill="#111" opacity=".55">
-    <text x="40" y="360">if (orden) { entropia++; }</text>
-    <text x="70" y="390">// TODO: arreglar después</text>
-    <text x="40" y="420">git commit -m "ahora sí"</text>
-    <text x="300" y="925">H = -Σ p(x) log p(x)</text>
-    <text x="330" y="955">loss = cross_entropy(y, ŷ)</text>
+    <!-- hoja rayada de cuaderno -->
+    <pattern id="rayado" width="800" height="34" patternUnits="userSpaceOnUse">
+      <rect width="800" height="34" fill="#f6f2e4"/>
+      <line x1="0" y1="33" x2="800" y2="33" stroke="#8fb3e8" stroke-width="1.6"/>
+    </pattern>
+
+    <!-- forma de la rotura -->
+    <path id="rotura" d="M150 640 L232 598 L300 626 L372 586 L455 618 L530 584 L612 612 L690 596 L716 668
+             L700 742 L728 812 L690 884 L612 916 L520 896 L438 930 L352 900 L262 922 L196 878 L160 800 L178 724 Z"/>
+    <clipPath id="dentro"><use xlink:href="#rotura" filter="url(#rasgado)"/></clipPath>
+
+    <path id="aro" d="M 0,-74 a 74,74 0 1,1 -0.1,0"/>
+  </defs>
+
+  <!-- ===================== TAPAS AZULES ===================== -->
+  <rect width="800" height="1130" fill="url(#tapa)" filter="url(#carton)"/>
+  <!-- lomo cosido -->
+  <rect x="0" y="0" width="54" height="1130" fill="#0f2a66"/>
+  <rect x="54" y="0" width="4" height="1130" fill="#0a1f4d"/>
+  <line x1="30" y1="14" x2="30" y2="1120" stroke="#e9e4d4" stroke-width="3" stroke-dasharray="16 12" opacity=".8"/>
+  <!-- esquinas gastadas -->
+  <path d="M800 0 L800 46 Q780 18 754 0 Z" fill="#3b6ad6" opacity=".6"/>
+  <path d="M800 1130 L800 1086 Q778 1110 750 1130 Z" fill="#3b6ad6" opacity=".6"/>
+
+  <!-- ===================== ORDEN: LA ETIQUETA ===================== -->
+  <g transform="rotate(-1.6 420 270)" filter="url(#sombra)">
+    <rect x="96" y="104" width="652" height="340" rx="22" fill="#fbf8ee"/>
+    <rect x="110" y="118" width="624" height="312" rx="14" fill="none" stroke="#1c46a6" stroke-width="3"/>
+    <rect x="118" y="126" width="608" height="296" rx="10" fill="none" stroke="#1c46a6" stroke-width="1.2"/>
+
+    <text x="140" y="168" font-family="'Courier New', monospace" font-size="17" font-weight="700" fill="#1c46a6" letter-spacing="3">MATERIA:</text>
+    <g font-family="'Arial Black', 'Archivo Black', Impact, sans-serif" font-weight="900" fill="#111">
+      <text x="140" y="262" font-size="96" textLength="566" lengthAdjust="spacingAndGlyphs">CÓDIGO</text>
+      <text x="140" y="352" font-size="84" textLength="566" lengthAdjust="spacingAndGlyphs">ENTRÓPICO</text>
+    </g>
+    <!-- la última letra ya empieza a soltarse -->
+    <line x1="140" y1="370" x2="706" y2="370" stroke="#1c46a6" stroke-width="1.5"/>
+    <text x="140" y="404" font-family="'Courier New', monospace" font-size="17" font-weight="700" fill="#1c46a6" letter-spacing="3">NOMBRE:</text>
+    <text x="252" y="406" font-family="'Segoe Print', 'Ink Free', 'Comic Sans MS', cursive" font-size="25" fill="#1c3f9e">Doña Rosa · puesto 47</text>
+  </g>
+  <!-- cinta adhesiva -->
+  <rect x="70" y="92" width="130" height="38" fill="#ffd400" opacity=".78" transform="rotate(-24 135 111)"/>
+  <rect x="650" y="420" width="130" height="38" fill="#ffd400" opacity=".78" transform="rotate(-18 715 439)"/>
+
+  <!-- subtítulo: tira mecanografiada -->
+  <g transform="rotate(1.2 420 500)" filter="url(#sombra)">
+    <rect x="112" y="468" width="620" height="76" fill="#111"/>
+    <text x="132" y="499" font-family="'Courier New', monospace" font-size="21" font-weight="700" fill="#f2efe6" letter-spacing="1">LA EVOLUCIÓN DEL DESARROLLO DE SOFTWARE</text>
+    <text x="132" y="530" font-family="'Courier New', monospace" font-size="21" font-weight="700" fill="#ffd400" letter-spacing="1">FRENTE AL OJO DE LA IA_</text>
   </g>
 
-  <!-- título como recortes pegados -->
-  <g font-family="'Arial Black', Impact, sans-serif" font-weight="900">
-    <rect x="40" y="70" width="540" height="110" fill="#f2efe6" transform="rotate(-2 310 125)"/>
-    <text x="60" y="160" font-size="104" fill="#111" transform="rotate(-2 310 125)">CÓDIGO</text>
-    <rect x="150" y="185" width="620" height="110" fill="#ffd400" transform="rotate(2 460 240)"/>
-    <text x="170" y="275" font-size="96" fill="#111" transform="rotate(2 460 240)">ENTRÓPICO</text>
+  <!-- ===================== ENTROPÍA: LA ROTURA ===================== -->
+  <!-- borde de cartón desgarrado (capas claras) -->
+  <use xlink:href="#rotura" fill="#d9d2bd" filter="url(#rasgado)" transform="translate(-6 -6) scale(1.012)"/>
+  <use xlink:href="#rotura" fill="#ece6d3" filter="url(#rasgadoFino)"/>
+
+  <g clip-path="url(#dentro)">
+    <rect x="120" y="560" width="640" height="400" fill="url(#rayado)"/>
+    <line x1="196" y1="560" x2="196" y2="960" stroke="#e10600" stroke-width="2" opacity=".7"/>
+    <!-- sombra interior del hueco -->
+    <rect x="120" y="560" width="640" height="40" fill="#000" opacity=".12"/>
+
+    <!-- la lista del pedido... -->
+    <g font-family="'Segoe Print', 'Ink Free', 'Comic Sans MS', cursive" fill="#1c3f9e" font-size="25">
+      <text x="210" y="660">arroz ........ 25</text>
+      <text x="210" y="694">aceite ....... 12</text>
+      <text x="210" y="728">fideo ... 20 <tspan font-size="18">(fin de mes)</tspan></text>
+    </g>
+    <!-- ...que se vuelve código... -->
+    <g font-family="'Courier New', monospace" font-size="21" font-weight="700" fill="#111">
+      <text x="210" y="762">if stock &lt; minimo:</text>
+      <text x="236" y="796">pedido.append(lote)</text>
+    </g>
+    <!-- ...y luego ruido -->
+    <g font-family="'Courier New', monospace" font-size="21" font-weight="700">
+      <text x="214" y="830" fill="#e10600">p3d!do.@pp#nd(l0t·</text>
+      <text x="226" y="864" fill="#111" opacity=".75" letter-spacing="4">01110000 0110▒01 ░</text>
+      <text x="252" y="898" fill="#111" opacity=".45" letter-spacing="9">▓ 1 0 ░ ; ▒ ?</text>
+    </g>
+
+    <!-- el ojo que mira desde adentro -->
+    <g transform="translate(598 736) rotate(-6) scale(.82)">
+      <path d="M-150 0 Q0 -112 150 0 Q0 112 -150 0 Z" fill="#fbf8ee" stroke="#111" stroke-width="9"/>
+      <circle r="62" fill="url(#iris)"/>
+      <circle r="62" fill="none" stroke="#111" stroke-width="5"/>
+      <!-- anillos de código en el iris -->
+      <g fill="none" stroke="#111" stroke-width="1.6" opacity=".55">
+        <circle r="44" stroke-dasharray="3 5"/>
+        <circle r="53" stroke-dasharray="10 4 2 4"/>
+      </g>
+      <circle r="20" fill="#111"/>
+      <rect x="-9" y="-26" width="14" height="14" fill="#f2efe6"/>
+      <!-- pestañas como marcas de compás -->
+      <g stroke="#111" stroke-width="6" stroke-linecap="square">
+        <line x1="-96" y1="-56" x2="-110" y2="-80"/>
+        <line x1="-48" y1="-76" x2="-54" y2="-104"/>
+        <line x1="0" y1="-82" x2="0" y2="-112"/>
+        <line x1="48" y1="-76" x2="54" y2="-104"/>
+        <line x1="96" y1="-56" x2="110" y2="-80"/>
+      </g>
+    </g>
   </g>
 
-  <!-- ojo -->
-  <g transform="translate(560 470) rotate(8)">
-    <ellipse cx="0" cy="0" rx="110" ry="58" fill="#f2efe6" stroke="#111" stroke-width="8"/>
-    <circle cx="0" cy="0" r="34" fill="#111"/>
-    <circle cx="10" cy="-10" r="9" fill="#f2efe6"/>
+  <!-- solapa de tapa arrancada, doblada hacia afuera -->
+  <path d="M612 612 L690 596 L716 668 L668 700 Z" fill="#6f8fd8" stroke="#0f2a66" stroke-width="2" filter="url(#rasgadoFino)"/>
+  <path d="M612 612 L668 700 L640 704 Z" fill="#000" opacity=".18"/>
+
+  <!-- ===================== EL DESORDEN SE ESCAPA ===================== -->
+  <g font-family="'Courier New', monospace" font-weight="700" fill="#f2efe6">
+    <text x="300" y="968" font-size="38" transform="rotate(14 300 968)">a</text>
+    <text x="352" y="1000" font-size="34" transform="rotate(-22 352 1000)">r</text>
+    <text x="246" y="1010" font-size="36" fill="#ffd400" transform="rotate(35 246 1010)">0</text>
+    <text x="420" y="976" font-size="32" transform="rotate(48 420 976)">1</text>
+    <text x="470" y="1018" font-size="30" fill="#ffd400" transform="rotate(-60 470 1018)">;</text>
+    <text x="196" y="960" font-size="30" transform="rotate(-12 196 960)">z</text>
+  </g>
+  <!-- papelitos -->
+  <rect x="520" y="960" width="22" height="16" fill="#f6f2e4" transform="rotate(28 531 968)"/>
+  <rect x="160" y="1000" width="16" height="12" fill="#f6f2e4" transform="rotate(-18 168 1006)"/>
+  <rect x="390" y="1030" width="12" height="10" fill="#f6f2e4" transform="rotate(50 396 1035)"/>
+  <!-- mancha de taza de api -->
+  <circle cx="140" cy="560" r="46" fill="none" stroke="#5a3a1a" stroke-width="7" opacity=".28"/>
+  <circle cx="140" cy="560" r="40" fill="none" stroke="#5a3a1a" stroke-width="2" opacity=".2"/>
+
+  <!-- ===================== CUSTODIA: EL SELLO DEL INGE ===================== -->
+  <g transform="translate(660 968) rotate(-14)" filter="url(#sello)" fill="#ffd400" stroke="#ffd400">
+    <circle r="88" fill="none" stroke-width="6"/>
+    <circle r="62" fill="none" stroke-width="2.5"/>
+    <text font-family="'Courier New', monospace" font-size="15" font-weight="700" stroke="none" letter-spacing="2.5">
+      <textPath xlink:href="#aro">REVISADO POR EL INGE · LEER ANTES · </textPath>
+    </text>
+    <text y="-6" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="26" stroke="none">v0.1</text>
+    <text y="20" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" font-weight="700" stroke="none">PUESTO 47</text>
   </g>
 
-  <!-- subtítulo mecanografiado -->
-  <g font-family="'Courier New', monospace" font-size="26" font-weight="700" fill="#111">
-    <text x="40" y="1010">LA EVOLUCIÓN DEL DESARROLLO DE SOFTWARE</text>
-    <text x="40" y="1045">FRENTE AL OJO DE LA IA</text>
-  </g>
-  <rect x="40" y="1065" width="720" height="8" fill="#111"/>
-  <text x="40" y="1105" font-family="'Arial Black', sans-serif" font-size="24" fill="#e10600">DIEGO TORREZ — BOLIVIA</text>
+  <!-- ===================== AUTOR ===================== -->
+  <rect x="58" y="1054" width="742" height="76" fill="#111"/>
+  <text x="90" y="1102" font-family="'Arial Black', Impact, sans-serif" font-size="30" fill="#f2efe6" letter-spacing="1">DIEGO TORREZ</text>
+  <text x="372" y="1100" font-family="'Courier New', monospace" font-size="18" font-weight="700" fill="#ffd400" letter-spacing="3">// BOLIVIA · 2026</text>
 </svg>

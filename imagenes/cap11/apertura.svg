@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 650" width="1600" height="650">
+  <!-- Apertura cap. 11: el cerro y la nube. Del mineral al dato. -->
+  <defs>
+    <pattern id="rayas" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <rect width="11" height="22" fill="#ff6b00" opacity=".22"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="650" fill="#f2efe6"/>
+  <rect width="1600" height="650" fill="url(#rayas)"/>
+
+  <!-- cerro -->
+  <path d="M60 600 L380 140 L470 230 L560 160 L860 600 Z" fill="#b5541c" stroke="#111" stroke-width="9"/>
+  <path d="M380 140 L430 210 L400 230 L470 230" fill="none" stroke="#111" stroke-width="6"/>
+  <!-- bocamina -->
+  <path d="M400 600 L400 500 Q460 450 520 500 L520 600 Z" fill="#111"/>
+  <!-- vagoneta con bits -->
+  <g transform="translate(560 520)">
+    <path d="M0 0 H200 L180 70 H20 Z" fill="#ffd400" stroke="#111" stroke-width="7"/>
+    <circle cx="50" cy="82" r="16" fill="#111"/><circle cx="150" cy="82" r="16" fill="#111"/>
+    <text x="100" y="-8" text-anchor="middle" font-family="'Courier New', monospace" font-weight="700" font-size="30" fill="#111">0101 1101</text>
+  </g>
+
+  <!-- cinta transportadora hacia la nube -->
+  <path d="M780 520 C960 470 1060 330 1200 250" fill="none" stroke="#111" stroke-width="12" stroke-dasharray="26 14"/>
+  <path d="M1188 228 L1230 236 L1206 270 Z" fill="#111"/>
+
+  <!-- nube-servidor lejana -->
+  <g transform="translate(1180 70)">
+    <path d="M40 170 Q0 170 0 130 Q0 90 50 90 Q60 30 130 30 Q190 30 210 80 Q280 60 300 120 Q340 125 340 160 Q340 190 300 190 H50 Q40 190 40 170 Z" fill="#fff" stroke="#111" stroke-width="8"/>
+    <rect x="110" y="190" width="120" height="150" fill="#111"/>
+    <g fill="#00a651"><rect x="128" y="214" width="84" height="14"/><rect x="128" y="246" width="84" height="14"/><rect x="128" y="278" width="84" height="14"/></g>
+    <text x="170" y="140" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="30" fill="#111">¿DÓNDE?</text>
+  </g>
+
+  <!-- etiqueta collage -->
+  <g transform="translate(1250 560) rotate(-6)">
+    <rect x="-230" y="-48" width="460" height="86" fill="#111"/>
+    <text y="12" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="36" fill="#ff6b00">DE LAS MINAS A LOS DATOS</text>
+  </g>
+</svg>

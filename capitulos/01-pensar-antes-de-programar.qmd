@@ -143,14 +143,14 @@ Este libro entero ocurre en un **mercado**. No es un capricho: un mercado es un 
 | En el mercado | En el software | Dónde lo veremos |
 |---|---|---|
 | El puesto de Doña Rosa | Un programa | Este capítulo |
-| El cuaderno de tapas azules | Los datos | Caps. 3 y 9 |
-| La manera de anotar y decidir | El algoritmo | Caps. 1 y 4 |
-| Los pasillos y las reglas del mercado | La arquitectura | Cap. 10 |
-| Las caseras que se pasan pedidos | Las API | Cap. 12 |
-| El sobrino que ahora ayuda en el puesto | El equipo | Cap. 14 |
-| El inspector de la alcaldía | Las pruebas y la seguridad | Caps. 15 y 16 |
+| El cuaderno de tapas azules | Los datos | Caps. 2 y 3 |
+| La manera de anotar y decidir | El algoritmo | Caps. 1 y 2 |
+| Los pasillos y las reglas del mercado | La arquitectura | Cap. 3 |
+| Las caseras que se pasan pedidos | Las API | Caps. 3 y 9 |
+| El sobrino que ahora ayuda en el puesto | El equipo | Cap. 4 |
+| El inspector de la alcaldía | Las pruebas y la seguridad | Cap. 5 |
 | El ayudante que nunca duerme y a veces inventa | La IA | Parte II |
-| ¿Quién es dueño de lo que sabe el mercado? | La soberanía de datos | Parte IV |
+| ¿Quién es dueño de lo que sabe el mercado? | La soberanía de datos | Cap. 11 |
 
 : El mercado como mapa del libro {#tbl-c01-metafora}
 
@@ -169,12 +169,11 @@ A lo largo del libro vamos a construir **Caserita**, el sistema del puesto. Empi
 | Versión | Capítulo | Qué aprende Caserita |
 |---|---|---|
 | **0.1** | 1 (este) | Decidir qué reponer: un algoritmo en pseudocódigo |
-| 0.2 | 2 | Convertirse en un programa de verdad en Python |
-| 0.3 | 3 | Organizar productos, caseros y fiados en estructuras de datos |
-| 0.5 | 9 | Recordar todo en una base de datos |
-| 0.7 | 12 | Hablar con otros puestos mediante una API |
-| 1.0 | 19 | Funcionar en producción, todos los días, sin Doña Rosa mirando |
-| 2.0 | Partes II y III | Tener un asistente con IA que responde preguntas sobre el puesto |
+| 0.2 | 2 | Convertirse en un programa de verdad en Python, con productos y fiados en colecciones |
+| 0.5 | 3 | Ordenarse en módulos, recordar todo en una base de datos y hablar con otros puestos mediante una API |
+| 0.7 | 4 | Crecer en equipo con Marco, sin pisarse el trabajo |
+| 1.0 | 5 | Funcionar en producción, todos los días, sin Doña Rosa mirando |
+| 2.0 | 7 a 10 | Tener un asistente con IA que responde preguntas sobre el puesto |
 
 : La hoja de ruta de Caserita {#tbl-c01-caserita}
 
@@ -649,7 +648,7 @@ Esto es **pseudocódigo convertido en prompt**. La IA ya no adivina: traduce.
 | Proponer casos borde | Bastante: sugiere ideas que no viste | A veces inventa casos irrelevantes |
 | Decidir la regla del negocio | Nada: no conoce a Doña Rosa | Siempre que lo intenta, adivina |
 
-**Lo que debe revisar una persona:** que el código generado cumpla tu tabla de verdad y tus casos borde. La IA te ahorra teclear, **no te ahorra pensar**. En la Parte II volveremos a esto con mucho más detalle (@sec-c23-ia).
+**Lo que debe revisar una persona:** que el código generado cumpla tu tabla de verdad y tus casos borde. La IA te ahorra teclear, **no te ahorra pensar**. En la Parte II volveremos a esto con mucho más detalle (@sec-c07-ia).
 :::
 
 ## Custodia {#sec-c01-custodia}

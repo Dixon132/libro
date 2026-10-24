@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <!-- Lista = fila de sacos numerados; diccionario = cuaderno con índice de nombres -->
+  <rect width="900" height="600" fill="#f2efe6"/>
+  <g font-family="'Arial Black', Impact, sans-serif">
+    <rect x="40" y="30" width="390" height="60" fill="#0033ff" stroke="#111" stroke-width="6"/>
+    <text x="235" y="72" text-anchor="middle" font-size="32" fill="#f2efe6">LISTA [ ]</text>
+    <rect x="470" y="30" width="390" height="60" fill="#e10600" stroke="#111" stroke-width="6"/>
+    <text x="665" y="72" text-anchor="middle" font-size="32" fill="#f2efe6">DICCIONARIO { }</text>
+  </g>
+  <!-- lista: sacos en fila con posición -->
+  <g font-family="'Courier New', monospace" font-weight="700" text-anchor="middle">
+    <g transform="translate(100 200)"><path d="M-50 0 Q0 -24 50 0 L44 140 H-44 Z" fill="#fff" stroke="#111" stroke-width="6"/><text y="80" font-size="20">arroz</text><text y="185" font-size="28" fill="#0033ff">[0]</text></g>
+    <g transform="translate(205 200)"><path d="M-50 0 Q0 -24 50 0 L44 140 H-44 Z" fill="#ffd400" stroke="#111" stroke-width="6"/><text y="80" font-size="20">sal</text><text y="185" font-size="28" fill="#0033ff">[1]</text></g>
+    <g transform="translate(310 200)"><path d="M-50 0 Q0 -24 50 0 L44 140 H-44 Z" fill="#fff" stroke="#111" stroke-width="6"/><text y="80" font-size="20">aceite</text><text y="185" font-size="28" fill="#0033ff">[2]</text></g>
+    <g transform="translate(400 200)"><text y="80" font-size="34">…</text></g>
+    <text x="235" y="470" font-size="20" fill="#111">se busca por POSICIÓN:</text>
+    <text x="235" y="500" font-size="20" fill="#111">recorres hasta encontrar</text>
+  </g>
+  <!-- diccionario: cuaderno -->
+  <g transform="translate(500 140) rotate(2)">
+    <rect x="12" y="12" width="330" height="290" fill="#111"/>
+    <rect width="330" height="290" fill="#fbf8ee" stroke="#111" stroke-width="7"/>
+    <g font-family="'Courier New', monospace" font-weight="700" font-size="22">
+      <rect x="0" y="0" width="70" height="290" fill="#ffd400" stroke="#111" stroke-width="5"/>
+      <text x="22" y="56">A</text><text x="22" y="126">F</text><text x="22" y="196">S</text>
+      <text x="90" y="56">"arroz": 4</text>
+      <text x="90" y="126">"fideo": 20</text>
+      <text x="90" y="196">"sal": 6</text>
+      <text x="90" y="256" fill="#e10600">clave → valor</text>
+    </g>
+  </g>
+  <g font-family="'Courier New', monospace" font-weight="700" text-anchor="middle">
+    <text x="665" y="470" font-size="20" fill="#111">se busca por NOMBRE:</text>
+    <text x="665" y="500" font-size="20" fill="#111">vas directo a la página</text>
+  </g>
+  <rect x="40" y="540" width="820" height="10" fill="#111"/>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <!-- ¿De quién es el cuaderno? Los datos del puesto salen por varias puertas -->
+  <rect width="900" height="600" fill="#f2efe6"/>
+  <g transform="rotate(-2 450 55)">
+    <rect x="40" y="22" width="820" height="66" fill="#111"/>
+    <text x="450" y="68" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="36" fill="#ff6b00">¿DE QUIÉN ES EL CUADERNO?</text>
+  </g>
+  <!-- cuaderno central -->
+  <g transform="translate(330 220) rotate(-3)">
+    <rect x="12" y="12" width="240" height="300" fill="#111"/>
+    <rect width="240" height="300" fill="#1c46a6" stroke="#111" stroke-width="7"/>
+    <rect x="30" y="40" width="180" height="90" rx="8" fill="#fbf8ee" stroke="#111" stroke-width="4"/>
+    <text x="120" y="80" text-anchor="middle" font-family="'Segoe Print', 'Ink Free', cursive" font-size="24" fill="#1c3f9e">ventas</text>
+    <text x="120" y="112" text-anchor="middle" font-family="'Segoe Print', 'Ink Free', cursive" font-size="24" fill="#1c3f9e">fiados</text>
+  </g>
+  <!-- flechas que salen -->
+  <g stroke="#111" stroke-width="7" fill="none">
+    <path d="M330 300 C250 280 200 250 170 200"/>
+    <path d="M590 300 C660 280 700 240 730 200"/>
+    <path d="M460 530 L460 560"/>
+  </g>
+  <g font-family="'Courier New', monospace" font-weight="700" font-size="20" text-anchor="middle">
+    <g transform="translate(150 160)"><rect x="-110" y="-40" width="220" height="70" fill="#ffd400" stroke="#111" stroke-width="5"/><text y="-8">app de pagos</text><text y="18">con QR</text></g>
+    <g transform="translate(760 160)"><rect x="-110" y="-40" width="220" height="70" fill="#ffd400" stroke="#111" stroke-width="5"/><text y="-8">chat de IA</text><text y="18">en otro país</text></g>
+    <g transform="translate(460 570)"><rect x="-150" y="-18" width="300" height="40" fill="#ff6b00" stroke="#111" stroke-width="5"/><text y="9">¿y Doña Rosa?</text></g>
+  </g>
+</svg>

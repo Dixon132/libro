@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560">
+  <!-- El modelo como espejo empañado: ve bien lo que abunda en sus datos -->
+  <rect width="800" height="560" fill="#f2efe6"/>
+  <g transform="translate(400 290)">
+    <ellipse rx="300" ry="220" fill="#111"/>
+    <ellipse rx="280" ry="200" fill="#dfe8f5" stroke="#111" stroke-width="6"/>
+    <!-- mitad nítida, mitad empañada -->
+    <path d="M0 -200 A280 200 0 0 1 0 200 Z" fill="#fff" opacity=".85"/>
+    <g font-family="'Arial Black', Impact, sans-serif" text-anchor="middle">
+      <text x="-140" y="-40" font-size="34" fill="#111">NEW YORK</text>
+      <text x="-140" y="10" font-size="30" fill="#111">LONDON</text>
+      <text x="-140" y="60" font-size="26" fill="#111">english</text>
+      <text x="140" y="-40" font-size="30" fill="#111" opacity=".25">Mercado</text>
+      <text x="140" y="0" font-size="30" fill="#111" opacity=".2">Rodríguez</text>
+      <text x="140" y="50" font-size="26" fill="#111" opacity=".15">aymara</text>
+    </g>
+  </g>
+  <g transform="translate(400 525)">
+    <rect x="-280" y="-26" width="560" height="44" fill="#ff6b00" stroke="#111" stroke-width="5"/>
+    <text y="6" text-anchor="middle" font-family="'Courier New', monospace" font-weight="700" font-size="22" fill="#111">el modelo ve nítido lo que abunda</text>
+  </g>
+</svg>

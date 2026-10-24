@@ -1,0 +1,58 @@
+---
+title: "Cuando la IA actúa: herramientas, MCP, agentes, evaluación y seguridad"
+estado: pendiente   # pendiente | borrador | revision | listo
+---
+
+::: {.callout-note collapse="true"}
+## Ficha del capítulo
+- **Objetivo de aprendizaje:** _(por definir)_
+- **Prerrequisitos:** _(por definir)_
+- **Proyecto guía:** _(qué pieza de Caserita se construye aquí)_
+- **Temas que integra** (del plan original de 47 capítulos):
+  - Tool use: cuando la IA ejecuta funciones
+  - MCP e integraciones con servicios externos
+  - Skills y flujos de trabajo reutilizables
+  - Agentes autónomos y sistemas multiagente
+  - Evaluar sistemas con IA: cómo medir si funcionan
+  - Seguridad en IA: prompt injection, fuga de datos y OWASP para LLMs
+  - IA local y autoalojada: modelos abiertos, privacidad e infraestructura propia
+:::
+
+## Orden {#sec-c10-orden}
+
+_Por escribir._ El sistema sin IA y la necesidad que justifica agregarla.
+
+## Entropía {#sec-c10-entropia}
+
+_Por escribir._ No determinismo, costos variables, dependencia de proveedores.
+
+## Análisis {#sec-c10-analisis}
+
+_Por escribir._ Costos, límites y riesgos medidos; arquitectura y alternativas.
+
+## Contención {#sec-c10-contencion}
+
+_Por escribir._ Evaluaciones, guardas y observabilidad.
+
+::: {.callout-important}
+## Reto
+_Por definir._
+:::
+
+## Ojo de la IA {#sec-c10-ia}
+
+::: {.callout-tip icon="false"}
+## Ojo de la IA
+_Por escribir._ El contenido técnico mismo: implementación paso a paso.
+:::
+
+## Custodia {#sec-c10-custodia}
+
+::: {.callout-warning icon="false"}
+## Custodia
+_Por escribir._ Privacidad, seguridad y responsabilidad sobre decisiones automatizadas.
+:::
+
+## Para cerrar
+
+_Por escribir._

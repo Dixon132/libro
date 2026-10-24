@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560">
+  <!-- La ventana de contexto como un mostrador: lo del medio se olvida -->
+  <rect width="900" height="560" fill="#f2efe6"/>
+  <g transform="rotate(-2 450 55)">
+    <rect x="40" y="22" width="820" height="66" fill="#111"/>
+    <text x="450" y="68" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="34" fill="#ffd400">LA VENTANA DE CONTEXTO ES UN MOSTRADOR</text>
+  </g>
+  <!-- mostrador -->
+  <rect x="60" y="360" width="780" height="40" fill="#111"/>
+  <rect x="80" y="400" width="740" height="110" fill="#7a00ff" stroke="#111" stroke-width="6"/>
+  <!-- papeles sobre el mostrador -->
+  <g font-family="'Courier New', monospace" font-weight="700" font-size="20" text-anchor="middle">
+    <g transform="translate(160 290) rotate(-4)"><rect x="-70" y="-60" width="140" height="120" fill="#ffd400" stroke="#111" stroke-width="5"/><text y="-12">INICIO</text><text y="18">bien</text><text y="42">recordado</text></g>
+    <g transform="translate(330 300) rotate(5)" opacity=".45"><rect x="-70" y="-60" width="140" height="120" fill="#fff" stroke="#111" stroke-width="5" stroke-dasharray="10 6"/><text y="0">medio</text></g>
+    <g transform="translate(470 296) rotate(-3)" opacity=".35"><rect x="-70" y="-60" width="140" height="120" fill="#fff" stroke="#111" stroke-width="5" stroke-dasharray="10 6"/><text y="0">medio…</text></g>
+    <g transform="translate(610 302) rotate(4)" opacity=".5"><rect x="-70" y="-60" width="140" height="120" fill="#fff" stroke="#111" stroke-width="5" stroke-dasharray="10 6"/><text y="0">¿medio?</text></g>
+    <g transform="translate(760 288) rotate(-5)"><rect x="-70" y="-60" width="140" height="120" fill="#ffd400" stroke="#111" stroke-width="5"/><text y="-12">FINAL</text><text y="18">bien</text><text y="42">recordado</text></g>
+  </g>
+  <!-- papel cayéndose -->
+  <g transform="translate(520 470) rotate(28)" font-family="'Courier New', monospace" font-weight="700" font-size="18" text-anchor="middle">
+    <rect x="-55" y="-40" width="110" height="80" fill="#fff" stroke="#e10600" stroke-width="5"/>
+    <text y="6" fill="#e10600">¡se cayó!</text>
+  </g>
+  <text x="450" y="148" text-anchor="middle" font-family="'Courier New', monospace" font-weight="700" font-size="22" fill="#111">lo importante va al principio o al final, y repetido</text>
+</svg>

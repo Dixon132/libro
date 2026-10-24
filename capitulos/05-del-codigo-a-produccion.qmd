@@ -1,0 +1,57 @@
+---
+title: "Del código a producción: pruebas, seguridad, despliegue y operación"
+estado: pendiente   # pendiente | borrador | revision | listo
+---
+
+::: {.callout-note collapse="true"}
+## Ficha del capítulo
+- **Objetivo de aprendizaje:** _(por definir)_
+- **Prerrequisitos:** _(por definir)_
+- **Proyecto guía:** _(qué pieza de Caserita se construye aquí)_
+- **Temas que integra** (del plan original de 47 capítulos):
+  - Pruebas: unitarias, de integración, end-to-end y TDD
+  - Seguridad desde el diseño: OWASP Top 10, contraseñas y datos sensibles
+  - Contenedores y despliegue: Docker, servidores, dominios, HTTPS y nube
+  - CI/CD y DevOps: pipelines y automatización
+  - Producción: monitoreo, logs, respaldos y manejo de incidentes
+  - Metodologías y clientes: Scrum, Kanban, requisitos, estimación y entregas
+:::
+
+## Orden {#sec-c05-orden}
+
+_Por escribir._ Presenta el problema real en el mercado y la solución de referencia.
+
+## Entropía {#sec-c05-entropia}
+
+_Por escribir._ ¿Qué lo degrada con el tiempo, el equipo y la escala?
+
+## Análisis {#sec-c05-analisis}
+
+_Por escribir._ Contenido técnico a fondo, con alternativas, ejemplos y código.
+
+## Contención {#sec-c05-contencion}
+
+_Por escribir._ Prácticas y pruebas que frenan el desorden.
+
+::: {.callout-important}
+## Reto
+_Por definir._
+:::
+
+## Ojo de la IA {#sec-c05-ia}
+
+::: {.callout-tip icon="false"}
+## Ojo de la IA
+_Por escribir._ Ventana breve: cómo una IA leería, generaría o rompería este tema.
+:::
+
+## Custodia {#sec-c05-custodia}
+
+::: {.callout-warning icon="false"}
+## Custodia
+_Por escribir._ Quién responde por lo construido y qué hay que proteger.
+:::
+
+## Para cerrar
+
+_Por escribir._

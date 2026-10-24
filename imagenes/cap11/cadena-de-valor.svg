@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420">
+  <!-- La misma cadena, dos siglos: materia prima barata, producto caro -->
+  <rect width="1000" height="420" fill="#f2efe6"/>
+  <g font-family="'Arial Black', Impact, sans-serif" font-size="22" text-anchor="middle">
+    <text x="120" y="50" fill="#111">SIGLO XVI</text>
+    <text x="120" y="270" fill="#111">SIGLO XXI</text>
+  </g>
+  <g font-family="'Courier New', monospace" font-weight="700" font-size="20" text-anchor="middle">
+    <!-- fila 1 -->
+    <g transform="translate(120 120)"><rect x="-90" y="-40" width="180" height="80" fill="#b5541c" stroke="#111" stroke-width="6"/><text y="-4" fill="#fff">plata del</text><text y="20" fill="#fff">cerro</text></g>
+    <g transform="translate(400 120)"><rect x="-110" y="-40" width="220" height="80" fill="#fff" stroke="#111" stroke-width="6"/><text y="-4">se embarca</text><text y="20">sin procesar</text></g>
+    <g transform="translate(720 120)"><rect x="-130" y="-40" width="260" height="80" fill="#ffd400" stroke="#111" stroke-width="6"/><text y="-4">se acuña y</text><text y="20">enriquece afuera</text></g>
+    <!-- fila 2 -->
+    <g transform="translate(120 340)"><rect x="-90" y="-40" width="180" height="80" fill="#1c46a6" stroke="#111" stroke-width="6"/><text y="-4" fill="#fff">datos del</text><text y="20" fill="#fff">mercado</text></g>
+    <g transform="translate(400 340)"><rect x="-110" y="-40" width="220" height="80" fill="#fff" stroke="#111" stroke-width="6"/><text y="-4">se envían</text><text y="20">sin procesar</text></g>
+    <g transform="translate(720 340)"><rect x="-130" y="-40" width="260" height="80" fill="#ffd400" stroke="#111" stroke-width="6"/><text y="-4">entrenan modelos</text><text y="20">que se venden afuera</text></g>
+  </g>
+  <g stroke="#111" stroke-width="7">
+    <line x1="215" y1="120" x2="285" y2="120"/><line x1="515" y1="120" x2="585" y2="120"/>
+    <line x1="215" y1="340" x2="285" y2="340"/><line x1="515" y1="340" x2="585" y2="340"/>
+  </g>
+  <g transform="translate(920 230) rotate(90)">
+    <text text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="28" fill="#ff6b00">¿SE REPITE?</text>
+  </g>
+</svg>
